@@ -1,0 +1,3 @@
+C:\Users\basakbim\Documents\Github\obakkal\Web\MakinaPark\Obakkal\obj\Debug\netcoreapp2.1\MakinaPark.csproj.CoreCompileInputs.cache
+C:\Users\basakbim\Documents\Github\obakkal\Web\MakinaPark\Obakkal\obj\Debug\netcoreapp2.1\MakinaPark.AssemblyInfoInputs.cache
+C:\Users\basakbim\Documents\Github\obakkal\Web\MakinaPark\Obakkal\obj\Debug\netcoreapp2.1\MakinaPark.AssemblyInfo.cs
