@@ -1,0 +1,20 @@
+﻿@model List<MakinaPark.Models.Makina>
+
+@{
+    ViewData["Title"] = "Kiralik";
+    Layout = "~/Views/Shared/_Layout_Makina.cshtml";
+}
+
+<h2>Kiralik</h2>
+
+<ul>
+
+    @foreach (var makina in Model)
+    {
+    <li>
+        <a href="@Url.Action("KiralikDetay", "Makina", new { slug = makina.Slug })">@makina.Ad</a>
+    </li>
+    }
+
+</ul>
+

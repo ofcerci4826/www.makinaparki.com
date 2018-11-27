@@ -11,7 +11,7 @@ namespace MakinaPark.Controllers
 {
     public class HomeController : Controller
     {
-        [AuthControl(IdKey = "musteriId", Type = "musteri")]
+        //[AuthControl(IdKey = "musteriId", Type = "musteri")]
         public IActionResult Index(long musteriId)
         {
             return View();
@@ -41,10 +41,10 @@ namespace MakinaPark.Controllers
             return View();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+        //[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        //public IActionResult Error()
+        //{
+        //    return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        //}
     }
 }

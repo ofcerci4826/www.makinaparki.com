@@ -1,8 +1,21 @@
-﻿
+﻿@using MakinaPark.Models;
+
 @{
     ViewData["Title"] = "Home Page";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = null;
 }
 
-
-@Kullanici.Oturum().AdSoyad
+<ul>
+    <li>
+        <a href="@Url.Action("Kiralik", "Makina")">Kiralık Makina</a>
+    </li>
+    <li>
+        <a href="@Url.Action("IkinciEl", "Makina")">İkinci El</a>
+    </li>
+    <li>
+        <a href="#">Link 3</a>
+    </li>
+    <li>
+        <a href="#">Link 4</a>
+    </li>
+</ul>
