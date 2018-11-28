@@ -47,7 +47,7 @@ namespace MakinaPark.Controllers
         public IActionResult SetLanguage(string culture, string returnUrl)
         {
             Response.Cookies.Append(
-                CookieRequestCultureProvider.DefaultCookieName,
+                "mp_lang",
                 CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culture)),
                 new CookieOptions { Expires = DateTimeOffset.UtcNow.AddYears(1) }
             );

@@ -61,11 +61,11 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ad.
+        ///   Looks up a localized string similar to Dil:.
         /// </summary>
-        public static string msg_ad {
+        public static string msg_dil {
             get {
-                return ResourceManager.GetString("msg_ad", resourceCulture);
+                return ResourceManager.GetString("msg_dil", resourceCulture);
             }
         }
     }

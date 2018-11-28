@@ -11,10 +11,12 @@
 
     @foreach (var makina in Model)
     {
-    <li>
-        <a href="@Url.Action("KiralikDetay", "Makina", new { slug = makina.Slug })">@makina.Ad</a>
-    </li>
+        <li>
+            <a href="@Url.Action("KiralikDetay", "Makina", new { slug = makina.Slug })">@makina.Ad</a>
+        </li>
     }
 
+
+   
 </ul>
 

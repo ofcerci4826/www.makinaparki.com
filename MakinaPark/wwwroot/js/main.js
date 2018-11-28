@@ -16,6 +16,8 @@
         }
     });
 
+    
+
     $(document).on('keyup', '.pushNotificationTitle', function () {
         var value = $(this).val();
 
@@ -100,6 +102,8 @@
     });
 
     $(document).on('submit', '.default-form', function () {
+        var message = '@Resources.Resources.msg_dil';
+        alert(message);
         var $form = $(this);
         var resetOnFail = ("true" == $form.attr("data-reset"));
         var returnUrl = $('#returnUrl').val();

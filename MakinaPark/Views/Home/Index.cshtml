@@ -1,21 +1,83 @@
-﻿@using MakinaPark.Models;
-
+﻿
 @{
     ViewData["Title"] = "Home Page";
     Layout = null;
 }
 
-<ul>
-    <li>
-        <a href="@Url.Action("Kiralik", "Makina")">Kiralık Makina</a>
-    </li>
-    <li>
-        <a href="@Url.Action("IkinciEl", "Makina")">İkinci El</a>
-    </li>
-    <li>
-        <a href="#">Link 3</a>
-    </li>
-    <li>
-        <a href="#">Link 4</a>
-    </li>
-</ul>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>MakinaParkı</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="~/css/main.css" />
+
+    @*@if (Context.Request.Cookies["mp_lang"].IndexOf("en") != -1)
+        {
+            <script src="~/language/en.js"></script>
+        }
+        else
+        {
+            <script src="~/language/tr.js"></script>
+        }*@
+</head>
+<body>
+    <div id="wrapper">
+        <div id="intro-page">
+            <!-- <video id="bg-video" autoplay muted loop src="https://videos.pond5.com/russia-stpeterburg-excavator-digging-ground-footage-065788657_main_xl.mp4"></video> -->
+            <video id="bg-video" autoplay muted loop src="https://videos.pond5.com/excavator-working-night-footage-000279336_main_xl.mp4"></video>
+            <!-- <video id="bg-video" autoplay muted loop src="https://videos.pond5.com/soy-milk-environmentally-friendly-product-footage-095905606_main_xl.mp4"></video> -->
+            <!-- <video id="bg-video" autoplay muted loop src="https://videos.pond5.com/young-male-farmer-picking-cucumber-footage-080480243_main_xl.mp4"></video> -->
+            <!-- <video id="bg-video" autoplay muted loop src="https://videos.pond5.com/waiter-tray-food-restaurant-night-footage-053257719_main_xl.mp4"></video> -->
+            <div id="bg"></div>
+            <div id="logo-w">
+                <div id="logo">Makina<span style="color:#000000; font-weight: bold;">Parkı</span></div>
+            </div>
+
+            <div id="categories-w">
+                <div id="categories-c">
+                    <a href="@Url.Action("Kiralik", "Makina")" class="category">Kiralık</a>
+                    <a href="@Url.Action("IkinciEl", "Makina")" class="category">Satılık</a>
+                    <a href="#" class="category">Operatör</a>
+                    <a href="#" class="category">Yedek Parça</a>
+                    <a href="#" class="category">Nakliye</a>
+                    <a href="#" class="category">Lojistik</a>
+                    <a href="#" class="category">Yetkili Servis</a>
+                </div>
+            </div>
+
+            @await Html.PartialAsync("_SelectLanguagePartial")
+        </div>
+    </div>
+
+    @*<script src="jquery.min.js"></script>
+    <script src="main.js"></script>*@
+
+    @*<ul>
+            <li>
+                <a href="@Url.Action("Kiralik", "Makina")">Kiralık Makina</a>
+            </li>
+            <li>
+                <a href="@Url.Action("IkinciEl", "Makina")">İkinci El</a>
+            </li>
+            <li>
+                <a href="#">Link 3</a>
+            </li>
+            <li>
+                <a href="#">Link 4</a>
+            </li>
+        </ul>
+
+        @Resources.Resources.msg_dil
+        @await Html.PartialAsync("_SelectLanguagePartial")
+
+        <div id="language"></div>
+
+        <script>
+            document.getElementById('language').innerHTML = MP_RESOURCES.msg_dil;
+        </script>*@
+</body>
+</html>
+

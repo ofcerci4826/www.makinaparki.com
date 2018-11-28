@@ -15,6 +15,7 @@ using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.Extensions.Options;
 using Vegatro.Core;
 using Vegatro.NetCore.Utils;
 
@@ -39,6 +40,26 @@ namespace MakinaPark
             {
                 // Resource (kaynak) dosyalarımızı ana dizin altında "Resources" klasorü içerisinde tutacağımızı belirtiyoruz.
                 options.ResourcesPath = "Resources";
+            });
+
+            services.Configure<RequestLocalizationOptions>(
+            opts =>
+            {
+                var supportedCultures = new List<CultureInfo>
+                {
+                          new CultureInfo("tr-TR"),
+                          new CultureInfo("en-US")
+                };
+            
+                opts.DefaultRequestCulture = new RequestCulture("tr-TR");
+                opts.DefaultRequestCulture.Culture.NumberFormat.NumberDecimalSeparator = ",";
+                opts.DefaultRequestCulture.Culture.DateTimeFormat.DateSeparator = ".";
+                opts.DefaultRequestCulture.Culture.NumberFormat.NumberGroupSeparator = ".";
+                opts.DefaultRequestCulture.Culture.DateTimeFormat.ShortDatePattern = "dd.MM.yyyy";
+                // Formatting numbers, dates, etc.
+                opts.SupportedCultures = supportedCultures;
+                // UI strings that we have localized.
+                opts.SupportedUICultures = supportedCultures;
             });
             services.AddHttpContextAccessor();
             services.TryAddSingleton<IActionContextAccessor, ActionContextAccessor>();
@@ -83,19 +104,22 @@ namespace MakinaPark
 
             // STANDART ROUTİNG MEKANİZMASI İLE DİL DESTEĞİ KULLANMAK
 
-            var supportedCultures = new List<CultureInfo>
-            {
-                new CultureInfo("tr-TR"),
-                new CultureInfo("en-US"),
-            };
+            //var supportedCultures = new List<CultureInfo>
+            //{
+            //    new CultureInfo("tr-TR"),
+            //    new CultureInfo("en-US"),
+            //};
 
 
-            app.UseRequestLocalization(new RequestLocalizationOptions
-            {
-                SupportedCultures = supportedCultures,
-                SupportedUICultures = supportedCultures,
-                DefaultRequestCulture = new RequestCulture("tr-TR")
-            });
+            //app.UseRequestLocalization(new RequestLocalizationOptions
+            //{
+            //    SupportedCultures = supportedCultures,
+            //    SupportedUICultures = supportedCultures,
+            //    DefaultRequestCulture = new RequestCulture("tr-TR")
+            //});
+
+            var options = app.ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>();
+            app.UseRequestLocalization(options.Value);
 
             Vegatro.NetCore.Utils.ActionContext.Configure(app.ApplicationServices.GetService<IActionContextAccessor>());
             ContextObject.Configure(app.ApplicationServices.GetService<IHttpContextAccessor>());
@@ -108,7 +132,7 @@ namespace MakinaPark
                 routes.MapRoute(
                     name: "kiralik-makinalar",
                     template: "kiralik-makinalar",
-                    defaults: new { controller = "Makina", action = "Kiralik" } );
+                    defaults: new { controller = "Makina", action = "Kiralik" });
 
                 routes.MapRoute(
                    name: "kiralik-makina-detay",
