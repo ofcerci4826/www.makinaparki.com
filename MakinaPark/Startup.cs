@@ -130,6 +130,23 @@ namespace MakinaPark
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
+                   name: "KiralikKategorilerAltKiralik",
+                   template: "Kategoriler-Alt-Kiralik/{slug?}",
+                   defaults: new { controller = "Kategori", action = "KategoriAltKiralik" });
+                routes.MapRoute(
+                  name: "KiralikKategorilerAltSatilik",
+                  template: "Kategoriler-Alt-Satilik/{slug?}",
+                  defaults: new { controller = "Kategori", action = "KategoriAltSatilik" });
+                routes.MapRoute(
+                    name: "KiralikKategoriler",
+                    template: "Kategoriler-Kiralik",
+                    defaults: new { controller = "Kategori", action = "Kiralik" });
+                routes.MapRoute(
+                    name: "SatilikKategoriler",
+                    template: "Kategoriler-Satilik",
+                    defaults: new { controller = "Kategori", action = "Satilik" });
+
+                routes.MapRoute(
                     name: "kiralik-makinalar",
                     template: "kiralik-makinalar",
                     defaults: new { controller = "Makina", action = "Kiralik" });

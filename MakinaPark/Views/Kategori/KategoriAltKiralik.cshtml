@@ -1,7 +1,7 @@
 ﻿@model List<MakinaPark.Models.KategoriModel>
 
 @{
-    ViewData["Title"] = "Kiralik";
+    ViewData["Title"] = "Alt Kategori";
     Layout = "~/Views/Shared/_Layout_Makina.cshtml";
 }
 
@@ -12,11 +12,11 @@
     @foreach (var kategori in Model)
     {
         <li>
-            <a href="@Url.Action("KategoriAlt", "Kategori", new { slug = kategori.Slug })" title="@kategori.Aciklama">@kategori.Kategori</a>
+            <a href="@Url.Action("KategoriAltMarka", "Kategori", new { slug = kategori.Slug })" title="@kategori.Aciklama">@kategori.KategoriAlt</a>
         </li>
     }
 
 
-   
+
 </ul>
 

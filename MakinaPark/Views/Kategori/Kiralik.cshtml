@@ -12,11 +12,12 @@
     @foreach (var kategori in Model)
     {
         <li>
-            <a href="@Url.Action("KategoriAlt", "Kategori", new { slug = kategori.Slug })" title="@kategori.Aciklama">@kategori.Kategori</a>
+            <a href="@Url.Action("KategoriAltKiralik", "Kategori", new { slug = kategori.Slug })" title="@kategori.Aciklama">@kategori.Kategori</a>
         </li>
     }
 
 
-   
+
 </ul>
+
 
