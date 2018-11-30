@@ -9,7 +9,7 @@ using Vegatro.NetCore;
 
 namespace MakinaPark.Controllers
 {
-    public class LoginController :Controller
+    public class UserController :Controller
     {
         [HttpGet]
         public IActionResult Login()
@@ -31,6 +31,12 @@ namespace MakinaPark.Controllers
                 return Content(AppResponse.Return(297, "Eposta adresi veya parola hatalı"));
 
             return Content(AppResponse.Return(200, kullanici));
+        }
+
+        [HttpGet]
+        public IActionResult Signup()
+        {
+            return View();
         }
     }
 }

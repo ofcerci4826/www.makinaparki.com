@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Ana Sayfa";
     Layout = null;
 }
 
@@ -12,7 +12,7 @@
     <title>MakinaParkı</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" media="screen" href="~/css/main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="~/css/home.css" />
 
     @*@if (Context.Request.Cookies["mp_lang"].IndexOf("en") != -1)
         {
@@ -26,6 +26,41 @@
 <body>
     <div id="wrapper">
         <div id="intro-page">
+            <nav class="user-nav-menu">
+                <ul>
+                    @if (MakinaPark.Models.Kullanici.Oturum().Id > 0)
+                    {
+                        <li>
+                            <span>@MakinaPark.Models.Kullanici.Oturum().AdSoyad - </span>
+                            <a href="@Url.Action("Logout", "User")" style="font-weight: bold;">Çıkış Yap</a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li>
+                            <a href="@Url.Action("Signup", "User")" class="sign-up">Kayıt Ol</a>
+                        </li>
+                        <li>
+                            <a href="#" class="sign-in">Giriş Yap</a>
+                        </li>
+                    }
+                </ul>
+            </nav>
+
+            <div class="user-login-w">
+                <form class="login-form" action="@Url.Action("Login", "User")" method="post">
+                    <div class="row">
+                        <input type="text" name="eposta" placeholder="E-Posta" />
+                    </div>
+                    <div class="row">
+                        <input type="password" name="parola" placeholder="Şifre" />
+                    </div>
+                    <div class="row">
+                        <button type="submit">Giriş Yap</button>
+                    </div>
+                </form>
+            </div>
+
             <!-- <video id="bg-video" autoplay muted loop src="https://videos.pond5.com/russia-stpeterburg-excavator-digging-ground-footage-065788657_main_xl.mp4"></video> -->
             <video id="bg-video" autoplay muted loop src="https://videos.pond5.com/excavator-working-night-footage-000279336_main_xl.mp4"></video>
             <!-- <video id="bg-video" autoplay muted loop src="https://videos.pond5.com/soy-milk-environmentally-friendly-product-footage-095905606_main_xl.mp4"></video> -->
@@ -41,7 +76,7 @@
                     <a href="@Url.Action("Kiralik", "Kategori")" class="category">Kiralık</a>
                     <a href="@Url.Action("Satilik", "Kategori")" class="category">Satılık</a>
                     @*<a href="@Url.Action("Kiralik", "Makina")" class="category">Kiralık</a>
-                    <a href="@Url.Action("IkinciEl", "Makina")" class="category">Satılık</a>*@
+                <a href="@Url.Action("IkinciEl", "Makina")" class="category">Satılık</a>*@
                     <a href="#" class="category">Operatör</a>
                     <a href="#" class="category">Yedek Parça</a>
                     <a href="#" class="category">Nakliye</a>
@@ -54,8 +89,8 @@
         </div>
     </div>
 
-    @*<script src="jquery.min.js"></script>
-    <script src="main.js"></script>*@
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/home.js"></script>
 
     @*<ul>
             <li>

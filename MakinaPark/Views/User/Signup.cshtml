@@ -1,0 +1,91 @@
+﻿
+@{
+    ViewData["Title"] = "Ücretsiz Kayıt Ol";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>MakinaParkı</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="~/css/home.css" />
+
+    @*@if (Context.Request.Cookies["mp_lang"].IndexOf("en") != -1)
+        {
+            <script src="~/language/en.js"></script>
+        }
+        else
+        {
+            <script src="~/language/tr.js"></script>
+        }*@
+</head>
+<body>
+    <div id="wrapper">
+        <div id="intro-page">
+            <div id="signup-body-c">
+                <div id="logo-w">
+                    <div id="logo">Makina<span style="color:#000000; font-weight: bold;">Parkı</span></div>
+                </div>
+                <div id="signup-form-w">
+                    <h3>Ücretsiz Kayıt Formu</h3>
+                    <div class="row">
+                        <form class="signup-form" action="@Url.Action("Signup", "User")" method="post">
+                            <div class="row">
+                                <input type="text" name="eposta" placeholder="E-Posta" />
+                            </div>
+                            <div class="row">
+                                <input type="password" name="parola" placeholder="Şifre" />
+                            </div>
+                            <div class="row">
+                                <input type="password" placeholder="Şifre (Tekrar)" />
+                            </div>
+                            <div class="row">
+                                <button type="submit">Kaydı Tamamla</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <video id="bg-video" autoplay muted loop src="https://videos.pond5.com/russia-stpeterburg-excavator-digging-ground-footage-065788657_main_xl.mp4"></video> -->
+            <video id="bg-video" autoplay muted loop src="https://videos.pond5.com/excavator-working-night-footage-000279336_main_xl.mp4"></video>
+            <!-- <video id="bg-video" autoplay muted loop src="https://videos.pond5.com/soy-milk-environmentally-friendly-product-footage-095905606_main_xl.mp4"></video> -->
+            <!-- <video id="bg-video" autoplay muted loop src="https://videos.pond5.com/young-male-farmer-picking-cucumber-footage-080480243_main_xl.mp4"></video> -->
+            <!-- <video id="bg-video" autoplay muted loop src="https://videos.pond5.com/waiter-tray-food-restaurant-night-footage-053257719_main_xl.mp4"></video> -->
+            <div id="bg"></div>
+            
+        </div>
+    </div>
+
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/home.js"></script>
+
+    @*<ul>
+            <li>
+                <a href="@Url.Action("Kiralik", "Makina")">Kiralık Makina</a>
+            </li>
+            <li>
+                <a href="@Url.Action("IkinciEl", "Makina")">İkinci El</a>
+            </li>
+            <li>
+                <a href="#">Link 3</a>
+            </li>
+            <li>
+                <a href="#">Link 4</a>
+            </li>
+        </ul>
+
+        @Resources.Resources.msg_dil
+        @await Html.PartialAsync("_SelectLanguagePartial")
+
+        <div id="language"></div>
+
+        <script>
+            document.getElementById('language').innerHTML = MP_RESOURCES.msg_dil;
+        </script>*@
+</body>
+</html>
+
