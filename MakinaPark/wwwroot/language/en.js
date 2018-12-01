@@ -1,3 +1,3 @@
 ﻿var MP_RESOURCES = {
-    msg_dil: 'Language'
+    msg_dil:'Language js'
 };

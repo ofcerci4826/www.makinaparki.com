@@ -12,15 +12,15 @@ $(document).ready(function () {
     $(document).on('submit', '.login-form', function () {
         var $this = $(this);
         var url = $this.attr('action');
-
-        $.ajax({
+                $.ajax({
             type: 'POST',
             url: url,
             data: $this.serialize(),
             dataType: 'json',
             success: function (data) {
                 if (data.Status != 200) {
-                    alert(data.Result);
+                    Toast.show({ content: data.Result });
+                    //alert();
                     return;
                 }
 
