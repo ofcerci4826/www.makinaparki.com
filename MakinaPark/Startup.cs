@@ -133,6 +133,13 @@ namespace MakinaPark
                    name: "KiralikKategorilerAltKiralik",
                    template: "Kategoriler-Alt-Kiralik/{slug?}",
                    defaults: new { controller = "Kategori", action = "KategoriAltKiralik" });
+
+                routes.MapRoute(
+                  name: "KiralikKategorilerMarkaKiralik",
+                  template: "Kategoriler-Marka-Kiralik/{ustSlug?}/{slug?}",
+                  defaults: new { controller = "Kategori", action = "KategoriMarkaKiralik" });
+
+
                 routes.MapRoute(
                   name: "KiralikKategorilerAltSatilik",
                   template: "Kategoriler-Alt-Satilik/{slug?}",
