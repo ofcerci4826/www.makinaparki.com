@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
+using MakinaPark.Models.Utils;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -82,6 +84,13 @@ namespace MakinaPark
                 options.Cookie.SecurePolicy = CookieSecurePolicy.SameAsRequest;
                 options.IdleTimeout = TimeSpan.FromHours(4);
             });
+
+
+            services
+
+             
+             
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -101,23 +110,7 @@ namespace MakinaPark
             app.UseStaticFiles();
             app.UseCookiePolicy();
             app.UseSession();
-
-            // STANDART ROUTİNG MEKANİZMASI İLE DİL DESTEĞİ KULLANMAK
-
-            //var supportedCultures = new List<CultureInfo>
-            //{
-            //    new CultureInfo("tr-TR"),
-            //    new CultureInfo("en-US"),
-            //};
-
-
-            //app.UseRequestLocalization(new RequestLocalizationOptions
-            //{
-            //    SupportedCultures = supportedCultures,
-            //    SupportedUICultures = supportedCultures,
-            //    DefaultRequestCulture = new RequestCulture("tr-TR")
-            //});
-
+           
             var options = app.ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>();
             app.UseRequestLocalization(options.Value);
 
@@ -126,40 +119,8 @@ namespace MakinaPark
 
             ConfigurationStatic = new ConfigurationBuilder().AddJsonFile("appsettings.json", optional: false).Build();
             Config.GetFunc = key => ConfigurationStatic[key];
-
-            app.UseMvc(routes =>
-            {
-                routes.MapRoute(
-                   name: "KiralikKategorilerAltKiralik",
-                   template: "Kategoriler-Alt-Kiralik/{slug?}",
-                   defaults: new { controller = "Kategori", action = "KategoriAltKiralik" });
-                routes.MapRoute(
-                  name: "KiralikKategorilerAltSatilik",
-                  template: "Kategoriler-Alt-Satilik/{slug?}",
-                  defaults: new { controller = "Kategori", action = "KategoriAltSatilik" });
-                routes.MapRoute(
-                    name: "KiralikKategoriler",
-                    template: "Kategoriler-Kiralik",
-                    defaults: new { controller = "Kategori", action = "Kiralik" });
-                routes.MapRoute(
-                    name: "SatilikKategoriler",
-                    template: "Kategoriler-Satilik",
-                    defaults: new { controller = "Kategori", action = "Satilik" });
-
-                routes.MapRoute(
-                    name: "kiralik-makinalar",
-                    template: "kiralik-makinalar",
-                    defaults: new { controller = "Makina", action = "Kiralik" });
-
-                routes.MapRoute(
-                   name: "kiralik-makina-detay",
-                   template: "kiralik-makinalar/{slug?}",
-                   defaults: new { controller = "Makina", action = "KiralikDetay" });
-
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
-            });
+            app.UseMvc(c => RouteConfig.Use(c));
+           
         }
     }
 }
