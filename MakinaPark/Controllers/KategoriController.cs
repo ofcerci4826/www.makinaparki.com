@@ -25,15 +25,28 @@ namespace MakinaPark.Controllers
 
         public IActionResult KategoriAltKiralik(string slug)
         {
-            var kategoriAlt = KategoriModel.Detay(slug);
+            var kategoriAlt = KategoriModel.KategoriAltKiralikList(slug);
 
-            return View(kategoriAlt);
+            return View("Kiralik",kategoriAlt);
         }
+
+        public IActionResult KategoriMarkaKiralik(string slug,string ustSlug)
+        {
+            var kategoriAlt = KategoriModel.KategoriMarkaKiralikList(slug, ustSlug);
+
+            return View("Kiralik", kategoriAlt);
+        }
+
+
+
+
+
+
         public IActionResult KategoriAltSatilik(string slug)
         {
-            var kategoriAlt = KategoriModel.Detay(slug);
-
-            return View(kategoriAlt);
+            //var kategoriAlt = KategoriModel.Detay(slug);
+            //kategoriAlt
+            return View();
         }
 
         public IActionResult IkinciEl()
