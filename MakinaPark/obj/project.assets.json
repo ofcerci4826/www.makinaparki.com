@@ -12275,11 +12275,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GithubProjeler\\www.makinaparki.com\\MakinaPark\\MakinaPark.csproj",
+      "projectUniqueName": "D:\\GitHupProjeler\\www.makinaparki.com\\MakinaPark\\MakinaPark.csproj",
       "projectName": "MakinaPark",
-      "projectPath": "D:\\GithubProjeler\\www.makinaparki.com\\MakinaPark\\MakinaPark.csproj",
+      "projectPath": "D:\\GitHupProjeler\\www.makinaparki.com\\MakinaPark\\MakinaPark.csproj",
       "packagesPath": "C:\\Users\\MehmetYavuz\\.nuget\\packages\\",
-      "outputPath": "D:\\GithubProjeler\\www.makinaparki.com\\MakinaPark\\obj\\",
+      "outputPath": "D:\\GitHupProjeler\\www.makinaparki.com\\MakinaPark\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

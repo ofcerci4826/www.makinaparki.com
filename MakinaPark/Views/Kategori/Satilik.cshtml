@@ -2,21 +2,24 @@
 
 @{
     ViewData["Title"] = "Satılık";
-    Layout = "~/Views/Shared/_Layout_Makina.cshtml";
+    Layout = "~/Views/Shared/_Layout_UstMenu.cshtml";
 }
 
 <h2>Satılık</h2>
 
-<ul>
+<aside class="page-navigation-menu">
+    <ul>
 
-    @foreach (var kategori in Model)
-    {
-        <li>
-            <a href="@Url.Action("KategoriAltSatilik", "Kategori", new { slug = kategori.Slug })" title="@kategori.Aciklama">@kategori.Kategori</a>
-        </li>
-    }
+        @foreach (var kategori in Model)
+        {
+            <li>
+                <a href="@Url.Action("KategoriAltSatilik", "Kategori", new { slug = kategori.Slug })" title="@kategori.Aciklama">@kategori.Kategori</a>
+            </li>
+        }
 
+    </ul>
+</aside>
 
-
-</ul>
-
+<section class="page-content-body">
+    test
+</section>
