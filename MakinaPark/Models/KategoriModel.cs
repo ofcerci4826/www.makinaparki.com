@@ -40,7 +40,7 @@ namespace MakinaPark.Models
                 KategoriModelList= new List<KategoriModel>()
             };
         }
-
+         
         public static List<KategoriModel> KategoriAltKiralikList(string slug)
         {
             List<KategoriModel> result = new List<KategoriModel>();
@@ -126,6 +126,13 @@ namespace MakinaPark.Models
             return result;
             //return kategori;
         }
+
+        internal static object KategoriMarkaSatilikList(string slug, string ustSlug)
+        {
+            throw new NotImplementedException();
+        }
+
+
 
         public static List<KategoriModel> Listesi()
         {

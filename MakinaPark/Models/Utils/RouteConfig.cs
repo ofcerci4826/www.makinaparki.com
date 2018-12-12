@@ -49,7 +49,10 @@ namespace MakinaPark.Models.Utils
                template: "kiralik-makinalar/{slug?}",
                defaults: new { controller = "Makina", action = "KiralikDetay" });
 
-
+            routes.MapRoute(
+               name: "KategoriDetay",
+               template: "Kategoriler/{slug?}",
+               defaults: new { controller = "Makina", action = "Detay" });
             routes.MapRoute(
                 name: "default",
                 template: "{controller=Home}/{action=Index}/{id?}");

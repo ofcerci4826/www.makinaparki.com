@@ -9,40 +9,62 @@ namespace MakinaPark.Controllers
 {
     public class KategoriController : Controller
     {
-        public IActionResult Kiralik()
+        public IActionResult Detay(string detay)
         {
+            ViewData["Title"] = detay;
+            ViewData["Baslik"] = detay;
             var kategoriListesi = KategoriModel.Listesi();
 
             return View(kategoriListesi);
         }
 
-        public IActionResult Satilik()
-        {
-            var kategoriListesi = KategoriModel.Listesi();
+        //public IActionResult Satilik()
+        //{
+        //    var kategoriListesi = KategoriModel.Listesi();
 
-            return View(kategoriListesi);
+        //    return View(kategoriListesi);
+        //}
+
+        public IActionResult KategoriAlt(string tip,string slug)
+        { 
+            var kategoriAlt = new object();
+            if (tip=="Satilik")
+            {
+                 kategoriAlt = KategoriModel.KategoriAltSatilikList(slug);
+            }
+            else if (tip=="Kiralik")
+            {
+                 kategoriAlt = KategoriModel.KategoriAltKiralikList(slug);
+            } 
+            return View("Detay",kategoriAlt);
         }
 
-        public IActionResult KategoriAltKiralik(string slug)
+        public IActionResult KategoriMarka(string tip, string slug,string ustSlug)
         {
-            var kategoriAlt = KategoriModel.KategoriAltKiralikList(slug);
-
-            return View("Kiralik",kategoriAlt);
+            var kategoriAltMarka = new object();
+            if (tip == "Satilik")
+            {
+                kategoriAltMarka = KategoriModel.KategoriMarkaSatilikList(slug, ustSlug);
+            }
+            else if (tip == "Kiralik")
+            {
+                kategoriAltMarka = KategoriModel.KategoriMarkaKiralikList(slug, ustSlug);
+            }
+             
+            return View("Detay", kategoriAltMarka);
         }
 
-        public IActionResult KategoriMarkaKiralik(string slug,string ustSlug)
+        public IActionResult KategoriMarkaModel(string slug, string ustSlug)
         {
             var kategoriAlt = KategoriModel.KategoriMarkaKiralikList(slug, ustSlug);
 
-            return View("Kiralik", kategoriAlt);
+            return View("Detay", kategoriAlt);
         }
 
 
 
 
-
-
-        public IActionResult KategoriAltSatilik(string slug)
+        public IActionResult KategoriMarkaModel(string slug)
         {
             //var kategoriAlt = KategoriModel.Detay(slug);
             //kategoriAlt

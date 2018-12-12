@@ -82,8 +82,8 @@
 
             <div id="categories-w">
                 <div id="categories-c">
-                    <a href="@Url.Action("Kiralik", "Kategori")" class="category">Kiralık</a>
-                    <a href="@Url.Action("Satilik", "Kategori")" class="category">Satılık</a>
+                    <a href="@Url.Action("Detay", "Kategori",new { detay = "Kiralık"})" class="category">Kiralık</a>
+                    <a href="@Url.Action("Detay", "Kategori",new { detay = "Satılık"})" class="category">Satılık</a>
                     @*<a href="@Url.Action("Kiralik", "Makina")" class="category">Kiralık</a>
                         <a href="@Url.Action("IkinciEl", "Makina")" class="category">Satılık</a>*@
                     <a href="#" class="category">Operatör</a>
