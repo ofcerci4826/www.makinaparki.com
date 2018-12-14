@@ -185,3 +185,9 @@ D:\GithubProjeler\www.makinaparki.com\MakinaPark\obj\Debug\netcoreapp2.1\MakinaP
 D:\GitHupProjeler\www.makinaparki.com\MakinaPark\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout_UstMenu.g.cshtml.cs
 D:\GithubProjeler\www.makinaparki.com\MakinaPark\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout_UstMenu.g.cshtml.cs
 D:\GithubProjeler\www.makinaparki.com\MakinaPark\obj\Debug\netcoreapp2.1\Razor\Views\Kategori\Detay.g.cshtml.cs
+D:\GithubProjeler\www.makinaparki.com\MakinaPark\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_AccountSideBar.g.cshtml.cs
+D:\GithubProjeler\www.makinaparki.com\MakinaPark\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Footer.g.cshtml.cs
+D:\GithubProjeler\www.makinaparki.com\MakinaPark\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Header.g.cshtml.cs
+D:\GithubProjeler\www.makinaparki.com\MakinaPark\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_HeaderAccount.g.cshtml.cs
+D:\GithubProjeler\www.makinaparki.com\MakinaPark\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_MainAccount.g.cshtml.cs
+D:\GithubProjeler\www.makinaparki.com\MakinaPark\obj\Debug\netcoreapp2.1\Razor\Views\User\Account.g.cshtml.cs
