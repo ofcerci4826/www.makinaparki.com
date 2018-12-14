@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Vegatro.NetCore;
+using Vegatro.NetCore.Filters;
 
 namespace MakinaPark.Controllers
 {
@@ -30,7 +31,8 @@ namespace MakinaPark.Controllers
             if (string.IsNullOrEmpty(kullanici.Token))
                 return Content(AppResponse.Return(297, "Eposta adresi veya parola hatalı"));
 
-            return Content(AppResponse.Return(200, kullanici));
+            //return Content(AppResponse.Return(200, kullanici));
+            return RedirectToAction("Account", "User");
         }
 
         [HttpGet]
@@ -38,5 +40,13 @@ namespace MakinaPark.Controllers
         {
             return View();
         }
+
+        [AuthControl]
+        [HttpGet]
+        public IActionResult Account()
+        {
+            return View();
+        }
+
     }
 }
