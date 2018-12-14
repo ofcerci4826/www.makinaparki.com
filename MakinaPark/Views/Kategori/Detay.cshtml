@@ -13,21 +13,21 @@
         @foreach (var kategori in Model)
         {
             <li>
-                <a href="@Url.Action("KategoriAlt", "Kategori", new { slug = kategori.Slug })" title="@kategori.Aciklama">@kategori.Kategori</a>
+                <a href="@Url.Action("KategoriAlt", "Kategori", new {tip= ViewData["detay"].ToString(), slug = kategori.Slug })" title="@kategori.Aciklama">@kategori.Kategori</a>
                 @if (kategori.KategoriAltList.Count > 0)
                 {
                     <ul class="sub-menu">
                         @foreach (var kategoriAlt in kategori.KategoriAltList)
                         {
                             <li>
-                                <a href="@Url.Action("KategoriMarka", "Kategori", new {ustSlug=kategori.Slug, slug = kategoriAlt.Slug })" title="@kategoriAlt.Aciklama">@kategoriAlt.Kategori</a>
+                                <a href="@Url.Action("KategoriMarka", "Kategori", new {tip= ViewData["detay"].ToString(),ustSlug=kategori.Slug, slug = kategoriAlt.Slug })" title="@kategoriAlt.Aciklama">@kategoriAlt.Kategori</a>
                                 @if (kategoriAlt.KategoriMarkaList != null)
                                 {
                                     <ul class="sub-menu">
                                         @foreach (var marka in kategoriAlt.KategoriMarkaList)
                                         {
                                             <li>
-                                                <a href="@Url.Action("KategoriMarkaModel", "Kategori", new { slug = marka.Slug,ustSlug=kategori.Slug,altSlug=kategoriAlt.Slug })" title="@marka.Aciklama">@marka.Kategori</a>
+                                                <a href="@Url.Action("KategoriMarkaModel", "Kategori", new {tip= ViewData["detay"].ToString(), slug = marka.Slug,ustSlug=kategori.Slug,altSlug=kategoriAlt.Slug })" title="@marka.Aciklama">@marka.Kategori</a>
                                                 @if (kategoriAlt.KategoriModelList != null)
                                                 {
                                                     <ul class="sub-menu">

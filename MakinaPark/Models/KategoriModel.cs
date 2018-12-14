@@ -40,7 +40,12 @@ namespace MakinaPark.Models
                 KategoriModelList= new List<KategoriModel>()
             };
         }
-         
+
+        internal static object KategoriAltSatilikList(string slug)
+        {
+            throw new NotImplementedException();
+        }
+
         public static List<KategoriModel> KategoriAltKiralikList(string slug)
         {
             List<KategoriModel> result = new List<KategoriModel>();

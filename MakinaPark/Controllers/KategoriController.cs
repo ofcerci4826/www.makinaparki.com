@@ -13,6 +13,12 @@ namespace MakinaPark.Controllers
         {
             ViewData["Title"] = detay;
             ViewData["Baslik"] = detay;
+            string detaylink = "";
+            if (detay=="Kiralık")
+            {
+                detaylink = "Kiralik";
+            }
+            ViewData["detay"] = detaylink;
             var kategoriListesi = KategoriModel.Listesi();
 
             return View(kategoriListesi);
@@ -26,7 +32,8 @@ namespace MakinaPark.Controllers
         //}
 
         public IActionResult KategoriAlt(string tip,string slug)
-        { 
+        {
+            ViewData["detay"] = tip;
             var kategoriAlt = new object();
             if (tip=="Satilik")
             {
@@ -41,6 +48,7 @@ namespace MakinaPark.Controllers
 
         public IActionResult KategoriMarka(string tip, string slug,string ustSlug)
         {
+            ViewData["detay"] = tip;
             var kategoriAltMarka = new object();
             if (tip == "Satilik")
             {
@@ -56,6 +64,7 @@ namespace MakinaPark.Controllers
 
         public IActionResult KategoriMarkaModel(string slug, string ustSlug)
         {
+             
             var kategoriAlt = KategoriModel.KategoriMarkaKiralikList(slug, ustSlug);
 
             return View("Detay", kategoriAlt);
