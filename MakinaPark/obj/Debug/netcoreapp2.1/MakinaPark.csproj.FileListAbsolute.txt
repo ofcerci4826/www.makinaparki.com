@@ -37,7 +37,6 @@ C:\Users\basakbim\Documents\Github\makinaparki\www.makinaparki.com\MakinaPark\ob
 C:\Users\basakbim\Documents\Github\makinaparki\www.makinaparki.com\MakinaPark\obj\Debug\netcoreapp2.1\MakinaPark.csproj.CopyComplete
 C:\Users\basakbim\Documents\Github\makinaparki\www.makinaparki.com\MakinaPark\obj\Debug\netcoreapp2.1\Razor\Views\Makina\Kiralik.g.cshtml.cs
 C:\Users\basakbim\Documents\Github\makinaparki\www.makinaparki.com\MakinaPark\obj\Debug\netcoreapp2.1\Razor\Views\Makina\IkinciEl.g.cshtml.cs
-C:\Users\basakbim\Documents\Github\makinaparki\www.makinaparki.com\MakinaPark\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout_Makina.g.cshtml.cs
 C:\Users\basakbim\Documents\Github\makinaparki\www.makinaparki.com\MakinaPark\obj\Debug\netcoreapp2.1\Razor\Views\Makina\KiralikDetay.g.cshtml.cs
 C:\Users\okngn\OneDrive\Belgeler\GitHub\www.makinaparki.com\MakinaPark\bin\Debug\netcoreapp2.1\MakinaPark.deps.json
 C:\Users\okngn\OneDrive\Belgeler\GitHub\www.makinaparki.com\MakinaPark\bin\Debug\netcoreapp2.1\MakinaPark.runtimeconfig.json
@@ -191,3 +190,14 @@ D:\GithubProjeler\www.makinaparki.com\MakinaPark\obj\Debug\netcoreapp2.1\Razor\V
 D:\GithubProjeler\www.makinaparki.com\MakinaPark\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_HeaderAccount.g.cshtml.cs
 D:\GithubProjeler\www.makinaparki.com\MakinaPark\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_MainAccount.g.cshtml.cs
 D:\GithubProjeler\www.makinaparki.com\MakinaPark\obj\Debug\netcoreapp2.1\Razor\Views\User\Account.g.cshtml.cs
+C:\Users\basakbim\Documents\Github\makinaparki\www.makinaparki.com\MakinaPark\bin\Debug\netcoreapp2.1\en\MakinaPark.resources.dll
+C:\Users\basakbim\Documents\Github\makinaparki\www.makinaparki.com\MakinaPark\obj\Debug\netcoreapp2.1\MakinaPark.Resources.Resources.resources
+C:\Users\basakbim\Documents\Github\makinaparki\www.makinaparki.com\MakinaPark\obj\Debug\netcoreapp2.1\MakinaPark.Resources.Resources.en.resources
+C:\Users\basakbim\Documents\Github\makinaparki\www.makinaparki.com\MakinaPark\obj\Debug\netcoreapp2.1\MakinaPark.csproj.GenerateResource.cache
+C:\Users\basakbim\Documents\Github\makinaparki\www.makinaparki.com\MakinaPark\obj\Debug\netcoreapp2.1\en\MakinaPark.resources.dll
+C:\Users\basakbim\Documents\Github\makinaparki\www.makinaparki.com\MakinaPark\obj\Debug\netcoreapp2.1\Razor\Views\Kategori\Detay.g.cshtml.cs
+C:\Users\basakbim\Documents\Github\makinaparki\www.makinaparki.com\MakinaPark\obj\Debug\netcoreapp2.1\Razor\Views\Kategori\Satilik.g.cshtml.cs
+C:\Users\basakbim\Documents\Github\makinaparki\www.makinaparki.com\MakinaPark\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout_UstMenu.g.cshtml.cs
+C:\Users\basakbim\Documents\Github\makinaparki\www.makinaparki.com\MakinaPark\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_SelectLanguagePartial.g.cshtml.cs
+C:\Users\basakbim\Documents\Github\makinaparki\www.makinaparki.com\MakinaPark\obj\Debug\netcoreapp2.1\Razor\Views\User\Login.g.cshtml.cs
+C:\Users\basakbim\Documents\Github\makinaparki\www.makinaparki.com\MakinaPark\obj\Debug\netcoreapp2.1\Razor\Views\User\Signup.g.cshtml.cs
