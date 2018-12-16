@@ -476,8 +476,6 @@ a:after, a:before, .btn.btn-primary i,
  	position: relative;
 }
 
- 
-
 .service-title {
 	background-color: #333333;
 	padding:25px;
@@ -2573,9 +2571,7 @@ a:after, a:before, .btn.btn-primary i,
          url('../fonts/montserrat-bold-webfont.svg#montserratbold') format('svg');
     font-weight: normal;
     font-style: normal;
-
 }
-
 
 @font-face {
     font-family: 'montserratextra_bold';

@@ -13,13 +13,8 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
-#line 2 "C:\Users\basakbim\Documents\Github\makinaparki\www.makinaparki.com\MakinaPark\Views\_ViewImports.cshtml"
-using MakinaPark.Models;
-
-#line default
-#line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"bb61a1d76cc5a923186dbc8c6dc3381963921b2b", @"/Views/Makina/KiralikDetay.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d731cfa46daa3fdb5b19661f7086c422806d3894", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"23ac09be4bcfaa7f9829a01d1a134874eaae1f3b", @"/Views/_ViewImports.cshtml")]
     public class Views_Makina_KiralikDetay : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<MakinaPark.Models.Makina>
     {
         #pragma warning disable 1998

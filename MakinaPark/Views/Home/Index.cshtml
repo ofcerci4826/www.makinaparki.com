@@ -1,133 +1,118 @@
 ﻿
 @{
     ViewData["Title"] = "Ana Sayfa";
-    Layout = null;
+    Layout = "~/Views/Shared/_Main.cshtml";
 }
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>MakinaParkı</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" media="screen" href="~/css/home.css" />
-    <link href="~/css/jquery.toast.min.css" rel="stylesheet" />
-    @if (Context.Request.Cookies[".AspNetCore.Culture"] != null)     
-    {
-        @if (Context.Request.Cookies[".AspNetCore.Culture"].IndexOf("en") != -1)
-        {
-            <script src="~/language/en.js"></script>
-        }
-        else
-        {
-            <script src="~/language/tr.js"></script>
-        }
-    }
-    else
-    {
-        <script src="~/language/tr.js"></script> 
-    }
 
 
-</head>
-<body>
-    <div id="wrapper">
-        <div id="intro-page">
-            <nav class="user-nav-menu">
-                <ul>
-                    @if (MakinaPark.Models.Kullanici.Oturum().Id > 0)
-                    {
-                        <li>
-                            <span>@MakinaPark.Models.Kullanici.Oturum().AdSoyad - </span>
-                            <a href="@Url.Action("Logout", "User")" style="font-weight: bold;">Çıkış Yap</a>
-                        </li>
-                    }
-                    else
-                    {
-                        <li>
-                            <a href="@Url.Action("Signup", "User")" class="sign-up">Kayıt Ol</a>
-                        </li>
-                        <li>
-                            <a href="#" class="sign-in">Giriş Yap</a>
-                        </li>
-                    }
-                </ul>
-            </nav>
 
-            <div class="user-login-w">
-                <form class="login-form" action="@Url.Action("Login", "User")" method="post">
-                    <div class="row">
-                        <input type="text" name="eposta" placeholder="E-Posta" />
+
+<div class="home-section image-bg">
+    <div class="overlay"></div>
+    <div class="home-content">
+        <div class="container">
+            <div id="home-slider" class="carousel slide carousel-fade" data-ride="carousel">
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <h2>MAKİNA PARKINI <span>BİRLİKTE İNŞA EDİYORUZ</span></h2>
+                        <a href="#" class="btn btn-primary">İletişime Geç</a>
                     </div>
-                    <div class="row">
-                        <input type="password" name="parola" placeholder="Şifre" />
+                    <div class="item">
+                        <h2>MAKİNA PARKI<span>İLE İŞİNİ BÜYÜT! </span> </h2>
+                        <a href="#" class="btn btn-primary">İŞ ORTAĞI OL</a>
                     </div>
-                    <div class="row">
-                        <button type="submit">Giriş Yap</button>
+                    <div class="item">
+                        <h2><span>MST</span> FİLTRELERİNDE BÜYÜK İNDİRİM !</h2>
+                        <a href="#" class="btn btn-primary">iNCELE</a>
                     </div>
-                </form>
-            </div>
-
-            <!-- <video id="bg-video" autoplay muted loop src="https://videos.pond5.com/russia-stpeterburg-excavator-digging-ground-footage-065788657_main_xl.mp4"></video> -->
-            <video id="bg-video" autoplay muted loop src="https://videos.pond5.com/excavator-working-night-footage-000279336_main_xl.mp4"></video>
-            <!-- <video id="bg-video" autoplay muted loop src="https://videos.pond5.com/soy-milk-environmentally-friendly-product-footage-095905606_main_xl.mp4"></video> -->
-            <!-- <video id="bg-video" autoplay muted loop src="https://videos.pond5.com/young-male-farmer-picking-cucumber-footage-080480243_main_xl.mp4"></video> -->
-            <!-- <video id="bg-video" autoplay muted loop src="https://videos.pond5.com/waiter-tray-food-restaurant-night-footage-053257719_main_xl.mp4"></video> -->
-            <div id="bg"></div>
-            <div id="logo-w">
-                <div id="logo">Makina<span style="color:#000000; font-weight: bold;">Parkı</span></div>
-            </div>
-
-            <div id="categories-w">
-                <div id="categories-c">
-                    <a href="@Url.Action("Detay", "Kategori",new { detay = "Kiralık"})" class="category">Kiralık</a>
-                    <a href="@Url.Action("Detay", "Kategori",new { detay = "Satılık"})" class="category">Satılık</a>
-                    @*<a href="@Url.Action("Kiralik", "Makina")" class="category">Kiralık</a>
-                        <a href="@Url.Action("IkinciEl", "Makina")" class="category">Satılık</a>*@
-                    <a href="#" class="category">Operatör</a>
-                    <a href="#" class="category">Yedek Parça</a>
-                    <a href="#" class="category">Nakliye</a>
-                    <a href="#" class="category">Lojistik</a>
-                    <a href="#" class="category">Yetkili Servis</a>
                 </div>
+                <a class="carousel-left" href="#home-slider" data-slide="prev"><i class="fa fa-angle-left"></i></a>
+                <a class="carousel-right" href="#home-slider" data-slide="next"><i class="fa fa-angle-right"></i></a>
             </div>
 
-            @await Html.PartialAsync("_SelectLanguagePartial")
-            <div style="z-index:9999;padding:inherit;position:absolute;top:20px" id="language"></div>
-        </div>
-    </div>
+            <div class="services">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="service crane-lifting image-bg">
+                            <div class="overlay"></div>
+                            <div class="image-box">
+                                <img class="img-responsive" src="~/client/images/service/1.png" alt="Image">
+                            </div>
+                            <div class="box-title">
+                                <h3><a href="@Url.Action("Makina", "Kiralik")" class="">KİRALIK</a></h3>
+                                <p>Ara, karşılaştır, en iyi fiyata hemen iş makinası kirala! </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 ">
+                        <div class="service home-plumbing image-bg">
+                            <div class="overlay"></div>
+                            <div class="image-box">
+                                <img class="img-responsive" src="~/client/images/service/2.png" alt="Image">
+                            </div>
+                            <div class="box-title">
+                                <h3><a href="@Url.Action("Makina", "Satilik")" class="">SATILIK</a></h3>
+                                <p>Aradığın iş makinasını bul, İş Makinanını kolaylıkla sat !  </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service house-plans image-bg">
+                            <div class="overlay"></div>
+                            <div class="image-box">
+                                <img class="img-responsive" src="~/client/images/service/3.png" alt="Image">
+                            </div>
+                            <div class="box-title">
+                                <h3><a href="@Url.Action("ServisBul", "Servis")" class="">SERVİSLER</a></h3>
+                                <p>Sana en yakın servislere ulaş, bizim  tarafımızdan seçilmiş servislerle çalış</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="service crane-lifting image-bg">
+                            <div class="overlay"></div>
+                            <div class="image-box">
+                                <img class="img-responsive" src="~/client/images/service/1.png" alt="Image">
+                            </div>
+                            <div class="box-title">
+                                <h3><a href="@Url.Action("Listesi", "YedekParca")" class="">YEDEK PARÇA</a></h3>
+                                <p>Binlerce farklı çeşit parçadan Makinan için en uygunu burda </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 ">
+                        <div class="service home-plumbing image-bg">
+                            <div class="overlay"></div>
+                            <div class="image-box">
+                                <img class="img-responsive" src="~/client/images/service/2.png" alt="Image">
+                            </div>
+                            <div class="box-title">
+                                <h3><a href="@Url.Action("Listesi", "Operator")" class="">OpERATORLER</a></h3>
+                                <p>En iyi operatörler arasından seçimini yap </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service house-plans image-bg">
+                            <div class="overlay"></div>
+                            <div class="image-box">
+                                <img class="img-responsive" src="~/client/images/service/3.png" alt="Image">
+                            </div>
+                            <div class="box-title">
+                                <h3><a href="@Url.Action("Listesi", "Lojistik")" class="">LOJİSTİK</a></h3>
+                                <p>İş makinası sevkiyatı için en uygun teklifi bul </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- services -->
+        </div><!-- container -->
+    </div><!-- home content -->
 
-    <script src="~/js/jquery.min.js"></script>
-    <script src="~/js/jquery.toast.min.js"></script>
-    <script src="~/js/toast.js"></script>
-    <script src="~/js/home.js"></script>
+</div><!-- home -->
 
-    @*<ul>
-            <li>
-                <a href="@Url.Action("Kiralik", "Makina")">Kiralık Makina</a>
-            </li>
-            <li>
-                <a href="@Url.Action("IkinciEl", "Makina")">İkinci El</a>
-            </li>
-            <li>
-                <a href="#">Link 3</a>
-            </li>
-            <li>
-                <a href="#">Link 4</a>
-            </li>
-        </ul>
-
-        @Resources.Resources.msg_dil
-        @await Html.PartialAsync("_SelectLanguagePartial")
-
-
-
-    *@
-    <script>
-        document.getElementById('language').innerHTML = MP_RESOURCES.msg_dil;
-    </script>
-</body>
-</html>
 
