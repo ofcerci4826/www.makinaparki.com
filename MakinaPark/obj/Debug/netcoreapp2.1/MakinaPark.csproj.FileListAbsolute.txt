@@ -1,7 +1,6 @@
 C:\Users\basakbim\Documents\Github\obakkal\Web\MakinaPark\Obakkal\obj\Debug\netcoreapp2.1\MakinaPark.csproj.CoreCompileInputs.cache
 C:\Users\basakbim\Documents\Github\obakkal\Web\MakinaPark\Obakkal\obj\Debug\netcoreapp2.1\MakinaPark.AssemblyInfoInputs.cache
 C:\Users\basakbim\Documents\Github\obakkal\Web\MakinaPark\Obakkal\obj\Debug\netcoreapp2.1\MakinaPark.AssemblyInfo.cs
-C:\Users\basakbim\Documents\Github\makinaparki\www.makinaparki.com\MakinaPark\obj\Debug\netcoreapp2.1\MakinaPark.csprojAssemblyReference.cache
 C:\Users\basakbim\Documents\Github\makinaparki\www.makinaparki.com\MakinaPark\obj\Debug\netcoreapp2.1\MakinaPark.csproj.CoreCompileInputs.cache
 C:\Users\basakbim\Documents\Github\makinaparki\www.makinaparki.com\MakinaPark\obj\Debug\netcoreapp2.1\MakinaPark.RazorAssemblyInfo.cache
 C:\Users\basakbim\Documents\Github\makinaparki\www.makinaparki.com\MakinaPark\obj\Debug\netcoreapp2.1\MakinaPark.RazorAssemblyInfo.cs
@@ -219,3 +218,4 @@ C:\Users\basakbim\Documents\Github\makinaparki\www.makinaparki.com\MakinaPark\ob
 C:\Users\basakbim\Documents\Github\makinaparki\www.makinaparki.com\MakinaPark\obj\Debug\netcoreapp2.1\Razor\Views\User\Account.g.cshtml.cs
 C:\Users\basakbim\Documents\Github\makinaparki\www.makinaparki.com\MakinaPark\obj\Debug\netcoreapp2.1\Razor\Views\User\Favorilerim.g.cshtml.cs
 C:\Users\basakbim\Documents\Github\makinaparki\www.makinaparki.com\MakinaPark\obj\Debug\netcoreapp2.1\Razor\Views\YedekParca\Listesi.g.cshtml.cs
+C:\Users\basakbim\Documents\Github\makinaparki\www.makinaparki.com\MakinaPark\obj\Debug\netcoreapp2.1\MakinaPark.csprojAssemblyReference.cache

@@ -311,7 +311,7 @@ a:after, a:before, .btn.btn-primary i,
 .dropdown-menu>.active>a:focus, 
 .dropdown-menu>.active>a:hover {
 	color: #efbb20;
-	background-color:transparent; 
+	/*background-color:transparent;*/ 
 }
 
 .navbar-header {
@@ -2477,7 +2477,7 @@ a:after, a:before, .btn.btn-primary i,
 }
 
 .form-control {
-	height: 55px;
+	/*height: 55px;*/
 	border-radius: 0;
 	font-size: 15px;
 	border: 1px solid #dddddd;
