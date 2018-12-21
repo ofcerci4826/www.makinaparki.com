@@ -29,7 +29,9 @@
                     Toast.show({ content: data.Result });
                     return;
                 }
-
+                inputIl.append(
+                    $('<option value=0>İl Seçiniz </option>'))
+               
                 $.each(data.Result, function (index, item) {
 
                     inputIl.append(
@@ -40,48 +42,64 @@
                 });
                 //$('#inputIl').selectpicker('val', selectedIl);
                 $('#inputIl').selectpicker('refresh');
+                inputIlce.append(
+                    $('<option value=0>İlçe Seçiniz </option>'))
+                $('#inputIlce').selectpicker('refresh');
             },
             complete: function () {
                 
             }
         });
     },
-    IlceComboDoldur: function (selectedIl, selectedIlce) {
-
+    IlceComboDoldur: function (selectedIl) {
+        
         inputIlce = $('#inputIlce');
 
-
-        var url = '/Helper/IlceListesi';
-        var params = JSON.stringify({
-            IlId: selectedIl,
-        });
-
+        //var params = JSON.stringify({
+        //    refIl: selectedIl,
+        //});
+        //inputIlce.selectpicker('destroy');
         Network.ajaxRequest({
-            url: url,
-            data: params,
-            contentType: "application/json; charset=utf-8",
-            processData: false,
-            dataType: 'json',
-            beforeSend: function () {
-            },
-            success: function (msg) {
-                console.log(msg);
+            data: 'refIl=' + selectedIl,
+            method: "post",
+            url: '/Genel/IlceListesi',
+            success: function (data) {
+                console.log(data);
+
+                if (data.Status == 402) {
+                    Toast.show({ content: "Geçersiz oturum." });
+                    window.location.reload(true);
+                    return;
+                }
+
+                if (data.Status == 403) {
+                    Toast.show({ content: "Bu işleme yetkiniz bulunmamaktadır." });
+                    return;
+                }
+
+                if (data.Status == 400) {
+                    Toast.show({ content: "Lütfen tüm gerekli bilgileri doldurunuz." });
+                    return;
+                }
+
+                if (data.Status != 200 && data.Status != 199) {
+                    Toast.show({ content: data.Result });
+                    return;
+                }
                 inputIlce.empty();
-                inputIlce.selectpicker('refresh');
-                inputIlce.append('<option value="0">İlçe Seçiniz</option>');
-                $.each(msg.Sonuc, function (index, item) {
+                inputIlce.append('<option  value="0">İlçe Seçiniz</option>');
+                $.each(data.Result, function (index, item) {
+                    //inputIlce.append(
+                    //    $('<option>', {
+                    //        value: item.Id,
+                    //        text: item.IlceAd
+                    //    }, '</option>'))
 
-                    inputIlce.append(
-                        $('<option>', {
-                            value: item.Id,
-                            text: item.IlceAdi
-                        }, '</option>'))
+                    inputIlce.append('<option  value="' + item.Id + '">' + item.IlceAd +'</option>');
                 });
-                $('#inputIlce').selectpicker('val', selectedIlce);
-                inputIlce.selectpicker('refresh');
-            },
-            error: function (a, b, c) {
-
+                //$('#inputIlce').selectpicker('val', selectedIlce);
+                $('#inputIlce').selectpicker('refresh');
+                //$('#inputIlce').selectpicker('destroy');
             },
             complete: function () {
 

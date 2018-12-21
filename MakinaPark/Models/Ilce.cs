@@ -9,25 +9,27 @@ using Vegatro.Core;
 
 namespace MakinaPark.Models
 {
-    public class Sehir
+    public class Ilce
     {
         public int Id { get; set; }
-        public string  Il { get; set; }
-        
+        public string IlceAd { get; set; }
+        public int refIl { get; set; }
 
-        public static Sehir Parse(DataRow row)
+        public static Ilce Parse(DataRow row)
         {
-            return new Sehir
+            return new Ilce
             {
                 Id = row.GetInteger("Id"),
-                Il = row.GetString("Il")
-               
+                IlceAd = row.GetString("Ilce"),
+                refIl = row.GetInteger("refIl")
+
             };
         }
 
-        public static List<Sehir> Listele()
+
+        public static List<Ilce> Listele(int refIl)
         {
-            return Sql.GetInstance().List("sp_sehir_listesi", null, (row) =>
+            return Sql.GetInstance().List("sp_ilce_listesi", new List<object> { refIl }, (row) =>
             {
                 return Parse(row);
             });

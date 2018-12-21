@@ -17,13 +17,15 @@ namespace MakinaPark.Controllers
         [HttpPost]
         public IActionResult IlListesi()
         {
-
-         
-
-
             return Content(AppResponse.Return(200, Sehir.Listele()));
 
-            //return RedirectToAction("Ozet", "User");
+        }
+
+        [HttpPost]
+        public IActionResult IlceListesi(int refIl)
+        {
+            return Content(AppResponse.Return(200, Ilce.Listele(refIl)));
+
         }
     }
 }

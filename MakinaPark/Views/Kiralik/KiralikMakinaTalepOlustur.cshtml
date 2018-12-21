@@ -10,6 +10,18 @@
     <h3>Kiralık iş makinası talebi oluştur</h3>
 </div>
 
+<div class="form-group">
+    <label>Başlık</label>
+    <div class="form-group">
+        <input type="text" class="form-control" required="required" id="txtBaslik" placeholder="Talebinizle ilgili kısa başlık girin">
+    </div>
+</div>
+
+<div class="form-group">
+    <label>Ek Bilgiler</label>
+    <textarea id="txtAciklama" required="required" class="form-control" rows="7" placeholder="Makinanın ne amaçla kullanılacağı veya ek açıklamaları girin"></textarea>
+</div>
+
 <div class="row">
     <div class="col-sm-6">
         <label>Kategori</label>
@@ -30,10 +42,7 @@
         <div class="form-group">
 
             <select class="selectpicker" id="inputAltKategori" data-width="100%">
-                @foreach (KategoriModel item in KategoriModel.Listesi())
-                {
-                    <option>@item.Kategori</option>
-                }
+                
             </select>
         </div>
     </div>
@@ -70,9 +79,7 @@
         <label>İl</label>
         <div class="form-group">
 
-            <select class="selectpicker" id="inputIl" data-width="100%">
-               
-            </select>
+            <select class="selectpicker" id="inputIl" data-width="100%"></select>
         </div>
     </div>
 
@@ -80,9 +87,7 @@
         <label>İlçe</label>
         <div class="form-group">
             <select class="selectpicker" id="inputIlce" data-width="100%">
-                <option>Mustard</option>
-                <option>Ketchup</option>
-                <option>Barbecue</option>
+                
             </select>
         </div>
     </div>
@@ -180,10 +185,6 @@
     </div>
 </div>
 
-<div class="form-group">
-    <label for="exampleInputEmail1">Ek Bilgiler</label>
-    <textarea name="message" id="message" required="required" class="form-control" rows="7" placeholder="Makinanın ne amaçla kullanılacağı veya ek açıklamaları girin"></textarea>
-</div>
 
 
 <div class="submit-button">
@@ -201,6 +202,11 @@
     $(document).ready(function () {
         $('#datetimepicker1').datetimepicker();
         Genel.IlComboDoldur();
+    });
+
+    $(document).on("change", "#inputIl", function () {
+        var selectedIl = $('#inputIl').val();
+        Genel.IlceComboDoldur(selectedIl);
     });
 </script>
 
