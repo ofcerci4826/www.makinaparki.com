@@ -33,7 +33,7 @@ namespace MakinaPark.Controllers
 
             //return Content(AppResponse.Return(200, kullanici));
 
-            return RedirectToAction("Account","User");
+            return RedirectToAction("Ozet","User");
         }
 
         [HttpGet]
@@ -53,6 +53,13 @@ namespace MakinaPark.Controllers
         [AuthControl]
         [HttpGet]
         public IActionResult Favorilerim()
+        {
+            return View();
+        }
+
+        [AuthControl]
+        [HttpGet]
+        public IActionResult Ozet()
         {
             return View();
         }

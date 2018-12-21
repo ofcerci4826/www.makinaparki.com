@@ -18,33 +18,35 @@ namespace MakinaPark.Models
         public string KategoriSlug { get; set; }
         public string Marka { get; set; }
         public string Model { get; set; }
-
-        public List<KategoriModel> KategoriAltList { get; set; }
-
-        public List<KategoriModel> KategoriMarkaList { get; set; }
-
-        public List<KategoriModel> KategoriModelList { get; set; }
-
         public static KategoriModel Parse(DataRow row)
         {
             return new KategoriModel
             {
                 Id = row.GetLong("Id"),
                 Kategori = row.GetString("KategoriAd"),
-                KategoriAlt= row.GetString("KategoriAltAd"),
+                KategoriAlt = row.GetString("KategoriAltAd"),
                 Aciklama = row.GetString("Aciklama"),
                 Slug = row.GetString("Slug"),
                 KategoriSlug = row.GetString("KategoriSlug"),
                 KategoriAltList = new List<KategoriModel>(),
                 KategoriMarkaList = new List<KategoriModel>(),
-                KategoriModelList= new List<KategoriModel>()
+                KategoriModelList = new List<KategoriModel>()
             };
         }
+        public List<KategoriModel> KategoriAltList { get; set; }
 
-        internal static object KategoriAltSatilikList(string slug)
+        public List<KategoriModel> KategoriMarkaList { get; set; }
+
+        public List<KategoriModel> KategoriModelList { get; set; }
+
+        public static List<KategoriModel> Listesi()
         {
-            throw new NotImplementedException();
+            return Sql.GetInstance().List("sp_kategori_listesi", new List<object> { }, (row) =>
+            {
+                return Parse(row);
+            });
         }
+
 
         public static List<KategoriModel> KategoriAltKiralikList(string slug)
         {
@@ -80,7 +82,8 @@ namespace MakinaPark.Models
             //return kategori;
         }
 
-        public static List<KategoriModel> KategoriMarkaKiralikList(string slug,string ustSlug)
+
+        public static List<KategoriModel> KategoriMarkaKiralikList(string slug, string ustSlug)
         {
             List<KategoriModel> result = new List<KategoriModel>();
 
@@ -103,7 +106,7 @@ namespace MakinaPark.Models
                         if (!kategori.Slug.Equals(altKategori.KategoriSlug))
                             continue;
 
-                         
+
                         if (ds.Tables.Count <= 2)
                             continue;
 
@@ -119,11 +122,6 @@ namespace MakinaPark.Models
                         kategori.KategoriAltList.Add(altKategori);
                     }
 
-
-
-
-                   
-
                     result.Add(kategori);
                 }
             });
@@ -132,19 +130,22 @@ namespace MakinaPark.Models
             //return kategori;
         }
 
-        internal static object KategoriMarkaSatilikList(string slug, string ustSlug)
-        {
-            throw new NotImplementedException();
-        }
+
+        //internal static object KategoriAltSatilikList(string slug)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
 
 
-        public static List<KategoriModel> Listesi()
-        {
-            return Sql.GetInstance().List("sp_kategori_listesi", new List<object> { }, (row) =>
-            {
-                return Parse(row);
-            });
-        }
+
+        //internal static object KategoriMarkaSatilikList(string slug, string ustSlug)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+
+
+
     }
 }
