@@ -9,26 +9,24 @@ using Vegatro.Core;
 
 namespace MakinaPark.Models
 {
-    public class KategoriModel
+    public class KategoriMarka
     {
-        public int Id { get; set; }
         public int refMarka { get; set; }
-        public string ModelAd { get; set; }
+        public string MarkaAd { get; set; }
 
-        public static KategoriModel Parse(DataRow row)
+        public static KategoriMarka Parse(DataRow row)
         {
-            return new KategoriModel
+            return new KategoriMarka
             {
-                Id = row.GetInteger("Id"),
                 refMarka = row.GetInteger("refMarka"),
-                ModelAd = row.GetString("ModelAd")
+                MarkaAd = row.GetString("MarkaAd")
                
             };
         }
 
-        public static List<KategoriModel> Listele(int refKategoriMarka)
+        public static List<KategoriMarka> Listele(int refKategoriAlt)
         {
-            return Sql.GetInstance().List("sp_kategori_model_listesi", new List<object> { refKategoriMarka }, (row) =>
+            return Sql.GetInstance().List("sp_kategori_marka_listesi", new List<object> { refKategoriAlt }, (row) =>
             {
                 return Parse(row);
             });

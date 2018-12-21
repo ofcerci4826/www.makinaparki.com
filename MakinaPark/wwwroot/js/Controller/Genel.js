@@ -1,11 +1,12 @@
 ﻿var Genel = {
 
     IlComboDoldur: function (selectedIl) {
-        inputIl = $('#inputIl');
-        inputIlce = $('#inputIlce');
+      
+
         Network.ajaxRequest({
             method: "post",
             url: '/Genel/IlListesi',
+           
             success: function (data) {
                 console.log(data);
 
@@ -29,22 +30,17 @@
                     Toast.show({ content: data.Result });
                     return;
                 }
-                inputIl.append(
-                    $('<option value=0>İl Seçiniz </option>'))
                
-                $.each(data.Result, function (index, item) {
+                $('#inputIl').append(
+                    $('<option value=0>Şehir Seçiniz </option>'))
 
-                    inputIl.append(
-                        $('<option>', {
-                            value: item.Id,
-                            text: item.Il
-                        }, '</option>'))
+                $.each(data.Result, function (index, item) {
+                    $('#inputIl').append('<option  value="' + item.Id + '">' + item.Il + '</option>');
+              
                 });
-                //$('#inputIl').selectpicker('val', selectedIl);
                 $('#inputIl').selectpicker('refresh');
-                inputIlce.append(
+                $('#inputIlce').append(
                     $('<option value=0>İlçe Seçiniz </option>'))
-                $('#inputIlce').selectpicker('refresh');
             },
             complete: function () {
                 
@@ -89,17 +85,13 @@
                 inputIlce.empty();
                 inputIlce.append('<option  value="0">İlçe Seçiniz</option>');
                 $.each(data.Result, function (index, item) {
-                    //inputIlce.append(
-                    //    $('<option>', {
-                    //        value: item.Id,
-                    //        text: item.IlceAd
-                    //    }, '</option>'))
+                    
 
                     inputIlce.append('<option  value="' + item.Id + '">' + item.IlceAd +'</option>');
                 });
-                //$('#inputIlce').selectpicker('val', selectedIlce);
+                
                 $('#inputIlce').selectpicker('refresh');
-                //$('#inputIlce').selectpicker('destroy');
+
             },
             complete: function () {
 
@@ -107,6 +99,9 @@
         });
 
     },
+
+
+
     //=======================================
     //              CHECK TC ID             =
     //=======================================
