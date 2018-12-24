@@ -51,12 +51,12 @@
         
         inputIlce = $('#inputIlce');
 
-        //var params = JSON.stringify({
-        //    refIl: selectedIl,
-        //});
-        //inputIlce.selectpicker('destroy');
+        var params = {
+            refIl: selectedIl,
+        };
+
         Network.ajaxRequest({
-            data: 'refIl=' + selectedIl,
+            data: params,
             method: "post",
             url: '/Genel/IlceListesi',
             success: function (data) {
