@@ -27,5 +27,8 @@ namespace MakinaPark.Controllers
             return Content(AppResponse.Return(200, Ilce.Listele(refIl)));
 
         }
+
+
+      
     }
 }

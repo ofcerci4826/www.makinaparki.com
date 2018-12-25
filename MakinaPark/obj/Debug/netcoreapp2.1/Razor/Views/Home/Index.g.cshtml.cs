@@ -103,7 +103,7 @@ WriteAttributeValue("", 1506, Url.Action("Makina", "Kiralik"), 1506, 32, false);
             WriteLiteral(" class=\"\">\r\n                            <div class=\"service crane-lifting image-bg\">\r\n                                <div class=\"overlay\"></div>\r\n                                <div class=\"image-box\">\r\n                                    ");
             EndContext();
             BeginContext(1779, 76, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "407a5c18ca18471293cee00ed9d41526", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "1e9878cc297a452ea2d612442202fd53", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -143,7 +143,7 @@ WriteAttributeValue("", 2323, Url.Action("Makina", "Satilik"), 2323, 32, false);
             WriteLiteral(" class=\"\">\r\n                            <div class=\"service home-plumbing image-bg\">\r\n                                <div class=\"overlay\"></div>\r\n                                <div class=\"image-box\">\r\n                                    ");
             EndContext();
             BeginContext(2596, 76, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "251c9a665058479a8e295d4b1f72a9cc", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "344ca0f6b606447f8aaf1e892a7ea9ca", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -183,7 +183,7 @@ WriteAttributeValue("", 3141, Url.Action("ServisBul", "Servis"), 3141, 34, false
             WriteLiteral(" class=\"\">\r\n                            <div class=\"service house-plans image-bg\">\r\n                                <div class=\"overlay\"></div>\r\n                                <div class=\"image-box\">\r\n                                    ");
             EndContext();
             BeginContext(3414, 76, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "a9f69fc44d2d471ca8bbd7426380efc2", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "5fa3e8dfa33b4c7392fdd86f6847f20b", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -228,7 +228,7 @@ WriteAttributeValue("", 4141, Url.Action("Listesi", "YedekParca"), 4141, 36, fal
             WriteLiteral(" class=\"\">\r\n                            <div class=\"service crane-lifting image-bg\">\r\n                                <div class=\"overlay\"></div>\r\n                                <div class=\"image-box\">\r\n                                    ");
             EndContext();
             BeginContext(4418, 76, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "cddd7e17d50346b0808e2286c6ccb3fc", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "283c69f220b94dbf8e655370698e21cf", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -270,7 +270,7 @@ WriteAttributeValue("", 5048, Url.Action("Listesi", "Operator"), 5048, 34, false
             WriteLiteral(" class=\"\">\r\n                            <div class=\"service home-plumbing image-bg\">\r\n                                <div class=\"overlay\"></div>\r\n                                <div class=\"image-box\">\r\n                                    ");
             EndContext();
             BeginContext(5323, 76, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "91bb0a3c98b749ce80ffaa287c881df2", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "61e5baf5601940ae9004bc74139cc702", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -312,7 +312,7 @@ WriteAttributeValue("", 5934, Url.Action("Listesi", "Lojistik"), 5934, 34, false
             WriteLiteral(" class=\"\">\r\n                            <div class=\"service house-plans image-bg\">\r\n                                <div class=\"overlay\"></div>\r\n                                <div class=\"image-box\">\r\n                                    ");
             EndContext();
             BeginContext(6207, 76, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "4fbbd224757e46278c83b35d24f68b05", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "980ba7ee2228414e904bcd02f0d398af", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

@@ -86,7 +86,7 @@
             refOperatorVarmi: $('#inputOperator').val(),
 
         };
-
+        GlobalLoading.show();
         Network.ajaxRequest({
             method: "post",
             url: '/Kiralik/KiralikMakinaTalepKaydet',
@@ -121,9 +121,87 @@
 
             },
             complete: function () {
+                GlobalLoading.hide();
+            }
+
+        });
+        GlobalLoading.hide();
+    },
+    KiralikMakinaTalepListesi: function () {
+
+
+        Network.ajaxRequest({
+            method: "post",
+            url: '/Kiralik/KiralikMakinaTalepListesi',
+
+            success: function (data) {
+                console.log(data);
+
+                if (data.Status == 402) {
+                    Toast.show({ content: "Geçersiz oturum." });
+                    window.location.reload(true);
+                    return;
+                }
+
+                if (data.Status == 403) {
+                    Toast.show({ content: "Bu işleme yetkiniz bulunmamaktadır." });
+                    return;
+                }
+
+                if (data.Status == 400) {
+                    Toast.show({ content: "Lütfen tüm gerekli bilgileri doldurunuz." });
+                    return;
+                }
+
+                if (data.Status != 200 && data.Status != 199) {
+                    Toast.show({ content: data.Result });
+                    return;
+                }
+                var layout = "";
+                $.each(data.Result, function (index, item) {
+                    //$('#inputKategori').append('<option  value="' + item.Id + '">' + item.KategoriAd + '</option>');
+                   
+
+                    layout += ' <div class="col-md-4 col-sm-6">  ';
+                    layout += ' <div class="blog-post"> ';
+                    layout += '      <div class="entry-header"> ';
+                    layout += '          <div class="blog-image"> ';
+                    layout += '               <div class="entry-thumbnail"> ';
+                    layout += '                   <a href="blog-details.html"><img class="img-responsive" src="../client/images/blog/ekskav-out-content-a.png" alt="Blog Image"></a> ';
+                    layout += '           </div> ';
+                    layout += '                   <div class="time"> ';
+                    layout += '                        <h2>' + item.Il+'</h2> ';
+                    layout += '                    </div> ';
+                    layout += '                </div> <!-- blog-image --> ';
+                    layout += '     </div> ';
+                    layout += '             <div class="entry-post"> ';
+                    layout += '                <div class="entry-title"> ';
+                    layout += '                    <h4><a href="blog-details.html">' + item.Baslik + '</a></h4> ';
+                    layout += '               </div> ';
+                    layout += '               <div class="post-content"> ';
+                    layout += '                    <div class="entry-summary"> ';
+                    layout += '                       <p>' + item.Aciklama + '</p> ';
+                    layout += '                        <div class="entry-meta"> ';
+                    layout += '                            <ul class="list-inline"> ';
+                    layout += '                                <li>' + item.KiralamaSure + ' - ' + item.KiralamaSureTipi+'</li> ';
+                    layout += '                                <li><a href="#"><i class="fa fa-user"></i>' + item.OperatorVarmiAck + '</a></li> ';
+                    layout += '                                <li><a href="#"><i class="fa fa-clock"></i>' + item.KayitTarihi + '</a></li> ';
+                    layout += '                           </ul> ';
+                    layout += '                        </div> ';
+                    layout += ' ';
+                    layout += '                   </div> ';
+                    layout += '               </div> ';
+                    layout += '           </div><!-- entry-post --> ';
+                    layout += ' </div> ';
+                    layout += '    </div> ';
+
+                });
+                $("#divKiralikTalepListesi").append(layout);
+
+            },
+            complete: function () {
 
             }
         });
     },
-
 }

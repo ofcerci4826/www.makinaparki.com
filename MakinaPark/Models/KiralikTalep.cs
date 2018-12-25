@@ -14,22 +14,33 @@ namespace MakinaPark.Models
     {
         public long Id { get; set; }
         public long refKullaniciId { get; set; }
+        public string Adsoyad { get; set; }
         public int refIl { get; set; }
+        public string Il { get; set; }
         public int refIlce { get; set; }
+        public string Ilce { get; set; }
         public long refKategori { get; set; }
+        public string KategoriAd { get; set; }
         public long refKategoriAlt { get; set; }
+        public string KategoriAltAd { get; set; }
         public long refKategoriMarka { get; set; }
+        public string MarkaAd { get; set; }
         public long refKategoriMarkaModel { get; set; }
-        public int refTeklifDurum { get; set; }
+        public string ModelAd { get; set; }
+        public int refTalepDurum { get; set; }
+        public string TalepDurum { get; set; }
         public string  Baslik { get; set; }
         public string Aciklama { get; set; }
         public int refOdemeTipi { get; set; }
+        public string OdemeTipi { get; set; }
         public string OdemeTipiDiger { get; set; }
         public int KacAdet { get; set; }
         public int KiralamaSure { get; set; }
         public int refKiralamaSureTipi { get; set; }
+        public string KiralamaSureTipi { get; set; }
         public string  IsBaslangic { get; set; }
         public int refOperatorVarmi { get; set; }
+        public string OperatorVarmiAck { get; set; }
         public bool Aktif { get; set; }
         public DateTime GecerlilikTarihi { get; set; }
         public DateTime KayitTarihi { get; set; }
@@ -41,22 +52,33 @@ namespace MakinaPark.Models
             {
                 Id = row.GetLong("Id"),
                 refKullaniciId = row.GetLong("refKullaniciId"),
+                Adsoyad = row.GetString("Adsoyad"),
                 refIl = row.GetInteger("refIl"),
+                Il = row.GetString("Il"),
                 refIlce = row.GetInteger("refIlce"),
+                Ilce = row.GetString("Ilce"),
                 refKategori = row.GetLong("refKategori"),
+                KategoriAd = row.GetString("KategoriAd"),
                 refKategoriAlt = row.GetLong("refKategoriAlt"),
+                KategoriAltAd = row.GetString("KategoriAltAd"),
                 refKategoriMarka = row.GetLong("refKategoriMarka"),
+                MarkaAd = row.GetString("MarkaAd"),
                 refKategoriMarkaModel = row.GetLong("refKategoriMarkaModel"),
-                refTeklifDurum = row.GetInteger("refTeklifDurum"),
+                ModelAd = row.GetString("ModelAd"),
+                refTalepDurum = row.GetInteger("refTalepDurum"),
+                TalepDurum = row.GetString("TalepDurum"),
                 Baslik = row.GetString("Baslik"),
                 Aciklama = row.GetString("Aciklama"),
                 refOdemeTipi= row.GetInteger("refOdemeTipi"),
+                OdemeTipi = row.GetString("OdemeTipi"),
                 OdemeTipiDiger = row.GetString("OdemeTipiDiger"),
                 KacAdet = row.GetInteger("KacAdet"),
                 KiralamaSure = row.GetInteger("KiralamaSure"),
                 refKiralamaSureTipi = row.GetInteger("refKiralamaSureTipi"),
+                KiralamaSureTipi = row.GetString("KiralamaSureTipi"),
                 IsBaslangic = row.GetString("IsBaslangic"),
                 refOperatorVarmi = row.GetInteger("refOperatorVarmi"),
+                OperatorVarmiAck = row.GetString("OperatorVarmiAck"),
                 Aktif = row.GetBool("Aktif"),
                 GecerlilikTarihi = row.GetDatetime("GecerlilikTarihi"),
                 KayitTarihi = row.GetDatetime("KayitTarihi"),
@@ -90,6 +112,14 @@ namespace MakinaPark.Models
             }, (row) =>
             {
                 return row.GetString("Result");
+            });
+        }
+
+        public static List<KiralikTalep> Listele()
+        {
+            return Sql.GetInstance().List("sp_kiralik_talep_listesi", null, (row) =>
+            {
+                return Parse(row);
             });
         }
     }

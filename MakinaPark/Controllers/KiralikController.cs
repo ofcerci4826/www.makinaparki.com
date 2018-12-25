@@ -30,11 +30,18 @@ namespace MakinaPark.Controllers
         public IActionResult KiralikMakinaTalepKaydet(int refIl, int refIlce, int refKategori,
             int refKategoriAlt, int refKategoriMarka, int refKategoriMarkaModel, string Baslik, string Aciklama,
             int refOdemeTipi, string OdemeTipiDiger, int KacAdet, int KiralamaSure, int refKiralamaSureTipi,
-            string  IsBaslangic, int refOperatorVarmi)
+            string IsBaslangic, int refOperatorVarmi)
         {
             return Content(AppResponse.Return(KiralikTalep.KiralikMakinaTalepOlustur(refIl, refIlce, refKategori, refKategoriAlt, refKategoriMarka,
                 refKategoriMarkaModel, Baslik, Aciklama, refOdemeTipi, OdemeTipiDiger, KacAdet, KiralamaSure, refKiralamaSureTipi, IsBaslangic, refOperatorVarmi)));
 
+
+        }
+
+        [HttpPost]
+        public IActionResult KiralikMakinaTalepListesi()
+        {
+            return Content(AppResponse.Return(200, KiralikTalep.Listele()));
 
         }
 

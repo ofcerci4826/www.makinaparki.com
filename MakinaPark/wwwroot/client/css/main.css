@@ -1148,7 +1148,7 @@ a:after, a:before, .btn.btn-primary i,
 	margin-bottom: -41px;
 	left:0;
 	padding: 15px;
-	max-width: 85px;
+	/*max-width: 85px;*/
 	text-align: center;
 	color: #fff;
 	background-color: #f3cc29;
@@ -1177,7 +1177,7 @@ a:after, a:before, .btn.btn-primary i,
 .blog-content .time h2 {
 	margin: 0;
 	line-height: 24px;
-	text-transform: uppercase;
+	/*text-transform: uppercase;*/
 }
 
 .entry-title {
