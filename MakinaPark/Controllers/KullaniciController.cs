@@ -12,7 +12,7 @@ namespace MakinaPark.Controllers
         {
             HttpContext.Session.Remove("Kullanici");
 
-            return RedirectToAction("Giris", "Kullanici");
+            return RedirectToAction("Login", "User");
         }
 
         [HttpGet]

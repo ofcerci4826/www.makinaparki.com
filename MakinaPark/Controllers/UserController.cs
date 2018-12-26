@@ -37,6 +37,14 @@ namespace MakinaPark.Controllers
         }
 
         [HttpGet]
+        public IActionResult Cikis()
+        {
+            HttpContext.Session.Remove("Kullanici");
+
+            return RedirectToAction("Login", "User");
+        }
+
+        [HttpGet]
         public IActionResult Signup()
         {
             return View();
@@ -62,6 +70,15 @@ namespace MakinaPark.Controllers
         public IActionResult Ozet()
         {
             return View();
+        }
+
+        [AuthControl]
+        [HttpPost]
+        public IActionResult BilgilerimiGuncelle(string  AdSoyad, string  Eposta, string  Telefon)
+        {
+            return Content(AppResponse.Return(Kullanici.BilgilerimiGuncelle(AdSoyad, Eposta, Telefon)));
+
+
         }
     }
 }

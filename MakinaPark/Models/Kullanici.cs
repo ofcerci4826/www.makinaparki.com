@@ -18,6 +18,7 @@ namespace MakinaPark.Models
         public string Token { get; set; }
         public string AdSoyad { get; set; }
         public string Eposta { get; set; }
+        public string TelefonNo { get; set; }
         public string Parola { get; set; }
         public bool Aktif { get; set; }
         public string RecordTime { get; set; }
@@ -31,6 +32,7 @@ namespace MakinaPark.Models
                 refId = row.GetLong("refId"),
                 AdSoyad = row.GetString("AdSoyad"),
                 Eposta = row.GetString("Eposta"),
+                TelefonNo = row.GetString("TelefonNo"),
                 Token = row.GetString("Token"),
                 Aktif = row.GetBool("Aktif"),
                 RecordTime = row.GetString("RecordTime"),
@@ -176,6 +178,20 @@ namespace MakinaPark.Models
         public static string Sil(int id)
         {
             return Sql.GetInstance().Get("sp_kullanici_sil", new List<object> { Oturum().Id, id }, (row) =>
+            {
+                return row.GetString("Result");
+            });
+        }
+
+        public static string BilgilerimiGuncelle(string  AdSoyad, string Eposta, string Telefon)
+        {
+            return Sql.GetInstance().Get("sp_kullanici_bilgilerimi_guncelle", new List<object>
+            {
+                Oturum().Id,
+                AdSoyad,
+                Eposta,
+                Telefon
+            }, (row) =>
             {
                 return row.GetString("Result");
             });
