@@ -79,7 +79,7 @@
                             <ul class="sub-menu collapse in" id="products">
                                 <li><a href="@Url.Action("KiralikMakinaTalepOlustur",  "Kiralik")">Kiralık Makina Arıyorum</a></li> @*class="active"*@
                                 <li><a href="@Url.Action("KiralikMakinaTalepOlustur",  "Kiralik")">Teklif Ver</a></li>
-                               
+
                             </ul>
 
                             <li data-toggle="collapse" data-target="#products" aria-expanded="true" class="active">
@@ -131,11 +131,14 @@
                                 <li>İş Ortağı Olmak İstiyorum</li>
                                 <li>Lojistik Teklifi Al</li>
                             </ul>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-user fa-lg"></i> Hesabım
+                            <li  data-toggle="collapse" data-target="#hesabim" class="collapsed">
+                                <a href="#"><i class="fa fa-user fa-lg"></i> Hesabım
                                 </a>
                             </li>
+                            <ul class="sub-menu collapse in" id="hesabim">
+                                <li><a href="@Url.Action("Account",  "User")">Kişisel Bilgilerim</a></li>
+                                <li>Firma Bilgilerim</li>
+                            </ul>
                             @*<li data-toggle="collapse" data-target="#reklamVeren" class="collapsed">
                                     <a href="#"><i class="fa fa-car fa-lg"></i> Reklam Veren <span class="arrow"></span></a>
                                 </li>
@@ -178,7 +181,7 @@
 
     <!-- Latest compiled and minified JavaScript -->
     @*<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/js/bootstrap-select.min.js"></script>*@
-    <script   type="text/javascript" src="~/client/Bootstrap-Select/js/bootstrap-select.js"></script>
+    <script type="text/javascript" src="~/client/Bootstrap-Select/js/bootstrap-select.js"></script>
 
     <script type="text/javascript" src="~/client/bootstrap.v3.datetimepicker/4.17.45/content/Scripts/bootstrap-datetimepicker.js"></script>
     <script type="text/javascript" src="~/client/moment.js/2.23.0/Content/Scripts/moment.min.js"></script>

@@ -1,7 +1,162 @@
-﻿
+﻿@using MakinaPark.Models;
 @{
     ViewData["Title"] = "Account";
     Layout = "~/Views/Shared/_MainAccount.cshtml";
 }
 
+<style>
+    .custom-checkbox {
+        min-height: 1rem;
+        padding-left: 0;
+        margin-right: 0;
+        cursor: pointer;
+    }
 
+        .custom-checkbox .custom-control-indicator {
+            content: "";
+            display: inline-block;
+            position: relative;
+            width: 30px;
+            height: 10px;
+            background-color: #818181;
+            border-radius: 15px;
+            margin-right: 10px;
+            -webkit-transition: background .3s ease;
+            transition: background .3s ease;
+            vertical-align: middle;
+            margin: 0 16px;
+            box-shadow: none;
+        }
+
+            .custom-checkbox .custom-control-indicator:after {
+                content: "";
+                position: absolute;
+                display: inline-block;
+                width: 18px;
+                height: 18px;
+                background-color: #f1f1f1;
+                border-radius: 21px;
+                box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4);
+                left: -2px;
+                top: -4px;
+                -webkit-transition: left .3s ease, background .3s ease, box-shadow .1s ease;
+                transition: left .3s ease, background .3s ease, box-shadow .1s ease;
+            }
+
+        .custom-checkbox .custom-control-input:checked ~ .custom-control-indicator {
+            background-color: #efbb20;
+            background-image: none;
+            box-shadow: none !important;
+        }
+
+            .custom-checkbox .custom-control-input:checked ~ .custom-control-indicator:after {
+                background-color: #efbb20;
+                left: 15px;
+            }
+
+        .custom-checkbox .custom-control-input:focus ~ .custom-control-indicator {
+            box-shadow: none !important;
+        }
+</style>
+
+<div class="row">
+    <div class="col-lg-6">
+
+        <div class="replay-box">
+            <h3>Kişisel Bilgilerim</h3>
+        </div>
+        <div class="col-sm-12">
+            <label>Ad Soyad</label>
+            <div class="form-group">
+                <input type="text" class="form-control" id="txtAdSoyad" value="@Kullanici.Oturum().AdSoyad">
+            </div>
+        </div>
+
+        <div class="col-sm-12">
+            <label>E-Posta</label>
+            <div class="form-group">
+                <input type="text" class="form-control" id="txtEposta" value="@Kullanici.Oturum().Eposta">
+            </div>
+        </div>
+
+        <div class="col-sm-12">
+            <label>Telefon</label>
+            <div class="form-group">
+                <input type="text" class="form-control" id="txtTelefon" value="">
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="form-group">
+                <a href="#" class="btn btn-primary"> Kaydet</a>
+            </div>
+            <hr style="border-width:3px" />
+        </div>
+    </div>
+
+    <div class="col-lg-6">
+        <div class="replay-box">
+            <h3>Şifre Değiştir</h3>
+        </div>
+        <div class="col-sm-12">
+            <label>Eski Şifre</label>
+            <div class="form-group">
+                <input type="text" class="form-control" id="txtEskiSifre" value="">
+            </div>
+        </div>
+
+        <div class="col-sm-12">
+            <label>Yeni Şifre</label>
+            <div class="form-group">
+                <input type="text" class="form-control" id="txtYeniSifre" value="">
+            </div>
+        </div>
+
+        <div class="col-sm-12">
+            <label>Yeni Şifre Tekrar</label>
+            <div class="form-group">
+                <input type="text" class="form-control" id="txtYeniSifreTekrar" value="">
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="form-group">
+                <a href="#" class="btn btn-primary"> Değiştir</a>
+            </div>
+            <hr style="border-width:3px" />
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="replay-box">
+            <h3>Bildirimler</h3>
+        </div>
+        <div class="col-sm-12">
+            <label class="custom-control custom-checkbox">
+                <input type="checkbox" hidden class="custom-control-input">
+                <span class="custom-control-indicator"></span>Makina Parkı bana kampanya veya bülten gönderebilir.
+            </label>
+        </div>
+        <div class="col-sm-12">
+            <label class="custom-control custom-checkbox">
+                <input type="checkbox" hidden class="custom-control-input">
+                <span class="custom-control-indicator"></span>Makina Parkına yeni bir talep eklendiğinde bilgilendirilmek istiyorum.
+            </label>
+        </div>
+        <div class="col-sm-12">
+            <label class="custom-control custom-checkbox">
+                <input type="checkbox" hidden class="custom-control-input">
+                <span class="custom-control-indicator"></span>Teklif verdiğim talep onaylanırsa bilgilendirilmek istiyorum.
+            </label>
+        </div>
+    </div>
+</div>
+<script src="~/client/js/jquery.min.js"></script>
+<script type="text/javascript" src="~/client/moment.js/2.23.0/Content/Scripts/moment.min.js"></script>
+<script type="text/javascript" src="~/client/bootstrap.v3.datetimepicker/4.17.45/content/Scripts/bootstrap-datetimepicker.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/locale/tr.js"></script>
+<script src="~/js/globalloading.js"></script>
+<script src="~/js/network.js"></script>
+<script src="~/js/Controller/Genel.js"></script>
+<script src="~/js/Controller/Kategori.js"></script>
+<script src="~/js/Controller/Kiralik.js"></script>
