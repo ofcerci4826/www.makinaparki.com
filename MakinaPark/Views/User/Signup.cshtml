@@ -1,91 +1,131 @@
 ﻿
 @{
-    ViewData["Title"] = "Ücretsiz Kayıt Ol";
-    Layout = null;
+    ViewData["Title"] = "Ana Sayfa";
+    Layout = "~/Views/Shared/_Main.cshtml";
 }
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>MakinaParkı</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="~/css/home.css" />
 
-    @*@if (Context.Request.Cookies["mp_lang"].IndexOf("en") != -1)
-        {
-            <script src="~/language/en.js"></script>
+
+
+<style>
+    .row {
+        overflow: hidden;
+    }
+
+    .cols {
+        padding-bottom: 100%;
+        margin-bottom: -100%;
+        overflow: hidden;
+    }
+
+    @@media(min-width: 992px) {
+        .col-md-4:not(:first-child),
+        .col-md-6:not(:first-child) {
+            border-left: 1px solid #eeeeee;
         }
-        else
-        {
-            <script src="~/language/tr.js"></script>
-        }*@
-</head>
-<body>
-    <div id="wrapper">
-        <div id="intro-page">
-            <div id="signup-body-c">
-                <div id="logo-w">
-                    <div id="logo">Makina<span style="color:#000000; font-weight: bold;">Parkı</span></div>
-                </div>
-                <div id="signup-form-w">
-                    <h3>Ücretsiz Kayıt Formu</h3>
-                    <div class="row">
-                        <form class="signup-form" action="@Url.Action("Signup", "User")" method="post">
-                            <div class="row">
-                                <input type="text" name="eposta" placeholder="E-Posta" />
+
+        .col-md-4:not(:last-child),
+        .col-md-6:not(:last-child) {
+            border-right: 1px solid #eeeeee;
+            margin-right: -1px;
+        }
+    }
+</style>
+<div class="container" style="height:initial">
+    <br /> <br />
+    <h1>
+        Giriş Yap
+    </h1>
+    <hr>
+    <div class="row ">
+        <div class="col-md-6 cols">
+
+            <div class="contact-info">
+                <form class="" action="@Url.Action("Login", "User")" method="post">
+                    <div class="contact-form row center-block">
+                        <div class="col-sm-12   ">
+                            <div class="form-group">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                <input type="text" name="AdSoyad" class="form-control" required placeholder="Adı Soyadı">
                             </div>
-                            <div class="row">
-                                <input type="password" name="parola" placeholder="Şifre" />
+                            <div class="form-group">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                                <input type="email" class="form-control" name="Eposta" required placeholder="E-Posta">
                             </div>
-                            <div class="row">
-                                <input type="password" placeholder="Şifre (Tekrar)" />
+                            <div class="form-group">
+                                <i class="fa fa-key" aria-hidden="true"></i>
+                                <input type="password" class="form-control" name="Parola" required placeholder="Parola">
                             </div>
-                            <div class="row">
-                                <button type="submit">Kaydı Tamamla</button>
+                            <div class="form-group form-control">
+
+                                <input type="checkbox" class="custom-control-input" id="firmamVar">
+                                <label class=" custom-control-label" for="firmamVar">Firmam Var</label>
+
                             </div>
-                        </form>
+                        </div>
+
+
                     </div>
-                </div>
+                    <div id="firma-div" style="display:none" class="row center-block">
+                        <div class="col-sm-12   ">
+                            <div class="form-group">
+                                <label>Firma Adı(*)</label>
+                                <input type="text" class="form-control" required="required" id="txtBaslik" placeholder="Firma Adını Giriniz">
+                            </div>
+                            <div class="form-group">
+                                <label>İl(*)</label>
+                                <div class="form-group">
+
+                                    <select class="selectpicker" name="FirmarefIl" id="inputIl" data-width="100%"></select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>İlçe(*)</label>
+                                <div class="form-group">
+                                    <select class="selectpicker" name="FirmarefIlce" id="inputIlce" data-width="100%"></select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Adres(*)</label>
+                                <textarea id="txtAdres" name="FirmaAdres" required="required" class="form-control" rows="2" placeholder="Firma Adresini Giriniz"></textarea>
+                            </div>
+                            
+                        </div>
+
+
+                        </div>
+                    <div class="submit-button text-center">
+                        <button type="submit" value="Login" class="btn btn-primary">Kayit Ol</button>
+                    </div>
+                </form><!-- contact form -->
             </div>
 
-            <!-- <video id="bg-video" autoplay muted loop src="https://videos.pond5.com/russia-stpeterburg-excavator-digging-ground-footage-065788657_main_xl.mp4"></video> -->
-            <video id="bg-video" autoplay muted loop src="https://videos.pond5.com/excavator-working-night-footage-000279336_main_xl.mp4"></video>
-            <!-- <video id="bg-video" autoplay muted loop src="https://videos.pond5.com/soy-milk-environmentally-friendly-product-footage-095905606_main_xl.mp4"></video> -->
-            <!-- <video id="bg-video" autoplay muted loop src="https://videos.pond5.com/young-male-farmer-picking-cucumber-footage-080480243_main_xl.mp4"></video> -->
-            <!-- <video id="bg-video" autoplay muted loop src="https://videos.pond5.com/waiter-tray-food-restaurant-night-footage-053257719_main_xl.mp4"></video> -->
-            <div id="bg"></div>
-            
+
+        </div>
+        <div class="col-md-6 cols text-center">
+            <br />
+            <h1>Üye Olduysanız </h1>
+            <h2><a href="@Url.Action("Login", "User")"> Giriş Yapınız</a></h2>
+
         </div>
     </div>
+    <hr>
 
-    <script src="~/js/jquery.min.js"></script>
-    <script src="~/js/home.js"></script>
-
-    @*<ul>
-            <li>
-                <a href="@Url.Action("Kiralik", "Makina")">Kiralık Makina</a>
-            </li>
-            <li>
-                <a href="@Url.Action("IkinciEl", "Makina")">İkinci El</a>
-            </li>
-            <li>
-                <a href="#">Link 3</a>
-            </li>
-            <li>
-                <a href="#">Link 4</a>
-            </li>
-        </ul>
-
-        @Resources.Resources.msg_dil
-        @await Html.PartialAsync("_SelectLanguagePartial")
-
-        <div id="language"></div>
-
+    @section scripts {
         <script>
-            document.getElementById('language').innerHTML = MP_RESOURCES.msg_dil;
-        </script>*@
-</body>
-</html>
+            
+            $('[id="firmamVar"]').change(function () {
+                if ($(this).is(':checked')) {
+                    $("#firma-div").show(2000);
+                }
+                else {
+                    $("#firma-div").hide("fast", function () {
+                        // Use arguments.callee so we don't need a named function
+                       // $(this).prev().hide("slow");
+                    });
+                }
+            });
 
+        </script>
+        }
+    </div>

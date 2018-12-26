@@ -415,7 +415,7 @@ a:after, a:before, .btn.btn-primary i,
 .home-content {
 	color: #fff;
 	padding-top: 155px;
-	height:800px;
+	height:880px;
 }
 
 .home-content h1 {
@@ -2508,7 +2508,7 @@ a:after, a:before, .btn.btn-primary i,
 
 .form-group i {
 	position: absolute;
-	top: 20px;
+	top: 8px;
 	font-size: 18px;
 	text-align: center;
 	line-height: 18px;
