@@ -221,3 +221,5 @@ C:\Users\basakbim\Documents\Github\makinaparki\www.makinaparki.com\MakinaPark\ob
 C:\Users\basakbim\Documents\Github\makinaparki\www.makinaparki.com\MakinaPark\obj\Debug\netcoreapp2.1\MakinaPark.csprojAssemblyReference.cache
 C:\Users\basakbim\Documents\Github\makinaparki\www.makinaparki.com\MakinaPark\obj\Debug\netcoreapp2.1\Razor\Views\Kiralik\KiralikMakinaTalepOlustur.g.cshtml.cs
 C:\Users\basakbim\Documents\Github\makinaparki\www.makinaparki.com\MakinaPark\obj\Debug\netcoreapp2.1\Razor\Views\User\Ozet.g.cshtml.cs
+C:\Users\basakbim\Documents\Github\makinaparki\www.makinaparki.com\MakinaPark\obj\Debug\netcoreapp2.1\Razor\Views\Makina\Parkim.g.cshtml.cs
+C:\Users\basakbim\Documents\Github\makinaparki\www.makinaparki.com\MakinaPark\obj\Debug\netcoreapp2.1\Razor\Views\Makina\Ekle.g.cshtml.cs

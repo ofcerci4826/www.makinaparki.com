@@ -11,16 +11,50 @@ namespace MakinaPark.Models
     public class Makina
     {
         public long Id { get; set; }
-        public string Ad { get; set; }
-        public string Slug { get; set; }
+        public long refKullanici { get; set; }
+        public string AdSoyad { get; set; }
+        public int refKategori { get; set; }
+        public string KategoriAd { get; set; }
+        public int refKategoriAlt { get; set; }
+        public string KategoriAltAd { get; set; }
+        public int refKategoriMarka { get; set; }
+        public string MarkaAd { get; set; }
+        public int refKategoriMarkaModel { get; set; }
+        public string ModelAd { get; set; }
+        public int refMakinaDurum { get; set; }
+        public string MakinaDurumu { get; set; }
+        public int CalismaSaati { get; set; }
+        public int ModelYil { get; set; }
+        public string  Plaka { get; set; }
+        public string SeriNo { get; set; }
+        public string Aciklama { get; set; }
+        public bool Aktif { get; set; }
+        public DateTime KayitTarihi { get; set; }
+        public DateTime GuncellemeTarihi { get; set; }
 
         public static Makina Parse(DataRow row)
         {
             return new Makina
             {
                 Id = row.GetLong("Id"),
-                Ad = row.GetString("Name"),
-                Slug = row.GetString("Slug")
+                refKullanici = row.GetLong("refKullanici"),
+                AdSoyad = row.GetString("AdSoyad"),
+                refKategori = row.GetInteger("refKategori"),
+                KategoriAd = row.GetString("KategoriAd"),
+                refKategoriAlt = row.GetInteger("refKategoriAlt"),
+                KategoriAltAd = row.GetString("KategoriAltAd"),
+                refKategoriMarka = row.GetInteger("refKategoriMarka"),
+                MarkaAd = row.GetString("MarkaAd"),
+                refKategoriMarkaModel = row.GetInteger("refKategoriMarkaModel"),
+                ModelAd = row.GetString("ModelAd"),
+                refMakinaDurum = row.GetInteger("refMakinaDurum"),
+                MakinaDurumu = row.GetString("MakinaDurumu"),
+                CalismaSaati = row.GetInteger("CalismaSaati"),
+                ModelYil = row.GetInteger("ModelYil"),
+                Plaka = row.GetString("Plaka"),
+                SeriNo = row.GetString("SeriNo"),
+                Aciklama = row.GetString("Aciklama"),
+
             };
         }
 
@@ -36,12 +70,23 @@ namespace MakinaPark.Models
             return makina;
         }
 
-        public static List<Makina> Listesi()
+        //public static List<Makina> Listesi()
+        //{
+        //    return Sql.GetInstance().List("sp_makina_listesi", new List<object> { Kullanici.Oturum().Id }, (row) =>
+        //    {
+        //        return Parse(row);
+        //    });
+        //}
+
+        public static List<Makina> Parkim()
         {
-            return Sql.GetInstance().List("sp_makina_listesi", new List<object> { Kullanici.Oturum().Id }, (row) =>
+            return Sql.GetInstance().List("sp_kullanici_makina_listesi", new List<object> { Kullanici.Oturum().Id }, (row) =>
             {
                 return Parse(row);
             });
         }
+
+
+        
     }
 }

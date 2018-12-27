@@ -32,7 +32,7 @@
     <link href="~/client/Bootstrap-Select/css/bootstrap-select.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/client/bootstrap.v3.datetimepicker/4.17.45/content/Content/bootstrap-datetimepicker.css">
 
-
+   
 
 
     <!-- icons -->
@@ -86,8 +86,8 @@
                                 <a href="#"><i class="fa fa-map-signs fa-lg"></i> Makina Parkım <span class="arrow"></span></a>
                             </li>
                             <ul class="sub-menu collapse in" id="products">
-                                <li><a href="#">Makina Ekle</a></li>
-                                <li><a href="#">Makina Listem</a></li>
+                                <li><a href="@Url.Action("Ekle",  "Makina")">Makina Ekle</a></li>
+                                <li><a href="@Url.Action("Parkim",  "Makina")">Makina Listem</a></li>
                             </ul>
 
                             @*<li data-toggle="collapse" data-target="#service" class="collapsed">
@@ -131,8 +131,9 @@
                                 <li>İş Ortağı Olmak İstiyorum</li>
                                 <li>Lojistik Teklifi Al</li>
                             </ul>
-                            <li  data-toggle="collapse" data-target="#hesabim" aria-expanded="true" class="active">
-                                <a href="#"><i class="fa fa-user fa-lg"></i> Hesabım
+                            <li data-toggle="collapse" data-target="#hesabim" aria-expanded="true" class="active">
+                                <a href="#">
+                                    <i class="fa fa-user fa-lg"></i> Hesabım
                                 </a>
                             </li>
                             <ul class="sub-menu collapse in" id="hesabim">
@@ -170,6 +171,7 @@
     </div>
     @Html.Partial("_Footer")
     <!-- script -->
+
     <script src="~/client/js/jquery.min.js"></script>
     <script src="~/client/js/modernizr.min.js"></script>
     <script src="~/client/js/bootstrap.min.js"></script>
@@ -182,9 +184,11 @@
     <!-- Latest compiled and minified JavaScript -->
     @*<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/js/bootstrap-select.min.js"></script>*@
     <script type="text/javascript" src="~/client/Bootstrap-Select/js/bootstrap-select.js"></script>
-
-    <script type="text/javascript" src="~/client/bootstrap.v3.datetimepicker/4.17.45/content/Scripts/bootstrap-datetimepicker.js"></script>
     <script type="text/javascript" src="~/client/moment.js/2.23.0/Content/Scripts/moment.min.js"></script>
+    <script type="text/javascript" src="~/client/bootstrap.v3.datetimepicker/4.17.45/content/Scripts/bootstrap-datetimepicker.js"></script>
+
+
+
 </body>
 
 <!-- Mirrored from html.gridbootstrap.com/diagram/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 09 Dec 2018 12:49:30 GMT -->

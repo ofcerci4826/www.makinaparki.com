@@ -11,9 +11,9 @@ namespace MakinaPark.Controllers
     {
         public IActionResult Kiralik()
         {
-            var makinaListesi = Makina.Listesi();
+            //var makinaListesi = Makina.Listesi();
 
-            return View(makinaListesi);
+            return View();
         }
 
         public IActionResult KiralikDetay(string slug)
@@ -24,6 +24,17 @@ namespace MakinaPark.Controllers
         }
 
         public IActionResult IkinciEl()
+        {
+            return View();
+        }
+
+        public IActionResult Parkim()
+        {
+            return View();
+        }
+
+
+        public IActionResult Ekle()
         {
             return View();
         }
