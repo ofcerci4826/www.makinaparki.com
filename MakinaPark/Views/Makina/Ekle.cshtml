@@ -104,14 +104,14 @@
     <div class="col-sm-4">
         <label>Model Yılı</label>
         <div class="form-group">
-            <input type="tel" class="form-control" id="txtTelefonNo" placeholder="Telefon No">
+            <input type="tel" class="form-control" id="txtModelYili" placeholder="Model Yılı">
         </div>
     </div>
 
     <div class="col-sm-4">
         <label>Çalışma Saati</label>
         <div class="form-group">
-            <input type="tel" class="form-control" id="txtTelefonNo" placeholder="Telefon No">
+            <input type="tel" class="form-control" id="txtCalismaSaati" placeholder="Çalışma Saati">
         </div>
     </div>
 
@@ -119,7 +119,7 @@
         <label>Makina Durum</label>
         <div class="form-group">
 
-            <select class="selectpicker" id="inputIl" data-width="100%"></select>
+            <select class="selectpicker" id="inputMakinaDurum" data-width="100%"></select>
         </div>
     </div>
 
@@ -128,14 +128,14 @@
     <div class="col-sm-4">
         <label>Plaka</label>
         <div class="form-group">
-            <input type="tel" class="form-control" id="txtTelefonNo" placeholder="Telefon No">
+            <input type="tel" class="form-control" id="txtPlaka" placeholder="Plaka">
         </div>
     </div>
 
     <div class="col-sm-4">
         <label>Seri No</label>
         <div class="form-group">
-            <input type="tel" class="form-control" id="txtTelefonNo" placeholder="Telefon No">
+            <input type="tel" class="form-control" id="txtSeriNo" placeholder="Seri No">
         </div>
     </div>
 </div>
@@ -152,6 +152,13 @@
     </div>
 </div>
 
+<div class="form-group">
+    <label>Ek Bilgiler(İsteğe Bağlı)</label>
+    <textarea id="txtAciklama" required="required" class="form-control" rows="7" placeholder="Makinanıza ait ek açıklamaları girrebilirsiniz"></textarea>
+</div>
+
+<a href="#" class="btn btn-primary" onclick="Makina.MakinaOlustur();">KAYDET</a>
+
 <script src="~/client/js/jquery.min.js"></script>
 <script type="text/javascript" src="~/client/moment.js/2.23.0/Content/Scripts/moment.min.js"></script>
 <script type="text/javascript" src="~/client/bootstrap.v3.datetimepicker/4.17.45/content/Scripts/bootstrap-datetimepicker.js"></script>
@@ -160,7 +167,7 @@
 <script src="~/js/network.js"></script>
 <script src="~/js/Controller/Genel.js"></script>
 <script src="~/js/Controller/Kategori.js"></script>
-<script src="~/js/Controller/Kiralik.js"></script>
+<script src="~/js/Controller/Makina.js"></script>
 
 
 
@@ -169,7 +176,7 @@
     $(document).ready(function () {
 
         Kategori.KategoriComboDoldur();
-        Genel.IlComboDoldur();
+        Genel.MakinaDurumuComboDoldur();
 
     });
 

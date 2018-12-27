@@ -60,9 +60,18 @@ namespace MakinaPark.Controllers
             string jsonString = app;
             Result obj = JsonDeserialize<Result>(jsonString);
 
-            return RedirectToAction("Login", "User", new { eposta = obj.Eposta, parola = obj.Parola});
+            if (obj.Status != "200")
+            {
+                return Content(AppResponse.Return(int.Parse(obj.Status)));
+            }
+
+            Kullanici kullanici = Kullanici.Giris(param.Eposta, param.Parola, Platform.WEB, "");
+            if (string.IsNullOrEmpty(kullanici.Token))
+                return Content(AppResponse.Return(297, "Eposta adresi veya parola hatalı"));
+
+            //return RedirectToAction("Login", "User", new { eposta = obj.Eposta, parola = obj.Parola});
             //return Content(app);
-            
+            return RedirectToAction("Index", "Home");
         }
         private static T JsonDeserialize<T>(string jsonString)
         {

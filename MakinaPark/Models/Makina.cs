@@ -58,6 +58,26 @@ namespace MakinaPark.Models
             };
         }
 
+        public static string Olustur(Makina param)
+        {
+            return Sql.GetInstance().Get("sp_kullanici_makina_olustur", new List<object> {
+               Kullanici.Oturum().Id,
+               param.refKategori,
+               param.refKategoriAlt,
+               param.refKategoriMarka,
+               param.refKategoriMarkaModel,
+               param.refMakinaDurum,
+               param.CalismaSaati,
+               param.ModelYil,
+               param.Plaka,
+               param.SeriNo,
+               param.Aciklama
+            }, (row) =>
+            {
+                return row.GetString("Result");
+            });
+        }
+
         public static Makina Detay(string slug)
         {
             Makina makina = new Makina();

@@ -35,5 +35,12 @@ namespace MakinaPark.Controllers
 
         }
 
+        [HttpPost]
+        public IActionResult MakinaDurumuListesi()
+        {
+            return Content(AppResponse.Return(200, MakinaDurum.Listele()));
+
+        }
+
     }
 }

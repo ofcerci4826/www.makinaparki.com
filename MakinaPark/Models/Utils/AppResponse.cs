@@ -6,13 +6,13 @@ namespace MakinaPark.Models.Utils
     {
         public static string Return(string dbresult)
         {
-            if (dbresult.Split('|').Length>0)
-            {
-                if ("SUCCEED".Equals(dbresult.Split('|')[0]))
-                {
-                    return JsonConvert.SerializeObject(new { Status = 200, Eposta = dbresult.Split('|')[1], Parola = dbresult.Split('|')[2] });
-                }
-            }
+            //if (dbresult.Split('|').Length>0)
+            //{
+            //    if ("SUCCEED".Equals(dbresult.Split('|')[0]))
+            //    {
+            //        return JsonConvert.SerializeObject(new { Status = 200, Eposta = dbresult.Split('|')[1], Parola = dbresult.Split('|')[2] });
+            //    }
+            //}
             if (string.IsNullOrEmpty(dbresult))
                 return JsonConvert.SerializeObject(new { Status = 298, Result = "İşlem başarısız." });
 

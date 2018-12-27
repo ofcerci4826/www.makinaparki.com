@@ -153,7 +153,54 @@
         });
 
     },
+    MakinaDurumuComboDoldur: function () {
 
+        inputMakinaDurum = $('#inputMakinaDurum');
+
+        Network.ajaxRequest({
+            data: '',
+            method: "post",
+            url: '/Genel/MakinaDurumuListesi',
+            success: function (data) {
+                //console.log(data);
+
+                if (data.Status == 402) {
+                    Toast.show({ content: "Geçersiz oturum." });
+                    window.location.reload(true);
+                    return;
+                }
+
+                if (data.Status == 403) {
+                    Toast.show({ content: "Bu işleme yetkiniz bulunmamaktadır." });
+                    return;
+                }
+
+                if (data.Status == 400) {
+                    Toast.show({ content: "Lütfen tüm gerekli bilgileri doldurunuz." });
+                    return;
+                }
+
+                if (data.Status != 200 && data.Status != 199) {
+                    Toast.show({ content: data.Result });
+                    return;
+                }
+                inputMakinaDurum.empty();
+                inputMakinaDurum.append('<option value="">Makina Durumu Seçiniz</option>');
+                $.each(data.Result, function (index, item) {
+
+
+                    inputMakinaDurum.append('<option  value="' + item.Id + '">' + item.MakinaDurumu + '</option>');
+                });
+
+                $('#inputMakinaDurum').selectpicker('refresh');
+
+            },
+            complete: function () {
+
+            }
+        });
+
+    },
 
     //=======================================
     //              CHECK TC ID             =

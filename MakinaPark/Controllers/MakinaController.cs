@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MakinaPark.Models;
+using MakinaPark.Models.Utils;
 using Microsoft.AspNetCore.Mvc;
+using Vegatro.NetCore.Filters;
 
 namespace MakinaPark.Controllers
 {
@@ -37,6 +39,16 @@ namespace MakinaPark.Controllers
         public IActionResult Ekle()
         {
             return View();
+        }
+
+
+        [AuthControl]
+        [HttpPost]
+        public IActionResult MakinaOlustur(Makina param)
+        {
+            return Content(AppResponse.Return(Makina.Olustur(param)));
+
+
         }
     }
 }

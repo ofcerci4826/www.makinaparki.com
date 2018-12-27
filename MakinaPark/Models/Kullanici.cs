@@ -23,9 +23,12 @@ namespace MakinaPark.Models
         public bool FirmaVarmi { get; set; }
         public string FirmaAdi { get; set; }
         public int refVergiDairesi { get; set; }
+        public string VergiDairesi { get; set; }
         public string VergiNo { get; set; }
         public int refIl { get; set; }
+        public string Il { get; set; }
         public int refIlce { get; set; }
+        public string Ilce { get; set; }
         public string Adres { get; set; }
         public string WebSitesi { get; set; }
         public bool Aktif { get; set; }
@@ -44,15 +47,18 @@ namespace MakinaPark.Models
                 AdSoyad = row.GetString("AdSoyad"),
                 Eposta = row.GetString("Eposta"),
                 TelefonNo = row.GetString("TelefonNo"),
-                Parola = row.GetString("TelefonNo"),  
-                FirmaVarmi = row.GetBool("TelefonNo"),
-                FirmaAdi = row.GetString("TelefonNo"),
-                refVergiDairesi = row.GetInteger("TelefonNo"),
-                VergiNo = row.GetString("TelefonNo"),
-                refIl = row.GetInteger("TelefonNo"),
-                refIlce = row.GetInteger("TelefonNo"),
-                Adres = row.GetString("TelefonNo"),
-                WebSitesi = row.GetString("TelefonNo"), 
+                Parola = row.GetString("Parola"),  
+                FirmaVarmi = row.GetBool("FirmaVarmi"),
+                FirmaAdi = row.GetString("FirmaAdi"),
+                refVergiDairesi = row.GetInteger("refVergiDairesi"),
+                VergiDairesi = row.GetString("VergiDairesi"),
+                VergiNo = row.GetString("VergiNo"),
+                refIl = row.GetInteger("refIl"),
+                Il = row.GetString("Il"),
+                refIlce = row.GetInteger("refIlce"),
+                Ilce = row.GetString("Ilce"),
+                Adres = row.GetString("Adres"),
+                WebSitesi = row.GetString("WebSitesi"), 
                 Aktif = row.GetBool("Aktif"),
                 RecordTime = row.GetString("RecordTime"),
               
@@ -198,7 +204,7 @@ namespace MakinaPark.Models
                 param.WebSitesi
             }, (row) =>
             {
-                return row.GetString("Result")+"|"+ row.GetString("eposta") + "|" + row.GetString("parola");
+                return row.GetString("Result");
             });
         }
 
