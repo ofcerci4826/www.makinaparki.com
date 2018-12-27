@@ -28,7 +28,12 @@ namespace MakinaPark.Controllers
 
         }
 
+        [HttpPost]
+        public IActionResult VergiDairesiListesi(int refIl)
+        {
+            return Content(AppResponse.Return(200, VergiDairesi.Listele(refIl)));
 
-      
+        }
+
     }
 }
