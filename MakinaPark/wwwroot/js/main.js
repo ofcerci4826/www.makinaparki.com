@@ -162,6 +162,69 @@
         return false;
     });
 
+    $(document).on('submit', '#logdin-form', function () { 
+        var $form = $(this);
+        //var resetOnFail = ("true" == $form.attr("data-reset"));
+        var returnUrl = "";//$('#returnUrl').val();
+
+        GlobalLoading.show();
+
+        Network.ajaxRequest({
+            type: $form.attr("method"),
+            url: $form.attr("action"),
+            data: $form.serialize(),
+            success: function (data) {
+                console.log(data);
+
+                if (window.grecaptcha)
+                    grecaptcha.reset();
+
+                if (data.Status != 200 && data.Status != 199 && resetOnFail)
+                    $form[0].reset();
+
+                if (data.Status == 402) {
+                    Toast.show({ content: "Geçersiz oturum." });
+                    window.location.reload(true);
+                    return;
+                }
+
+                if (data.Status == 403) {
+                    Toast.show({ content: "Bu işleme yetkiniz bulunmamaktadır." });
+                    return;
+                }
+
+                if (data.Status == 400) {
+                    Toast.show({ content: "Lütfen tüm gerekli bilgileri doldurunuz." });
+                    return;
+                }
+
+                if (data.Status != 200 && data.Status != 199) {
+                    if (data.Result != null && typeof (data.Result) == 'object') {
+                        Toast.show({ content: data.Result.ErrorMessage });
+                        return;
+                    }
+
+                    Toast.show({ content: data.Result });
+                    return;
+                }
+
+                if (data.Status == 199)
+                    returnUrl += (returnUrl.indexOf("?") >= 0 ? '&id=' + data.Id : '?id=' + data.Id);
+               
+                //if (data.Eposta != '') {
+                //    returnUrl = "User/Login?Eposta=" + data.Eposta + "Parolar=" + data.Parola;
+               // }
+
+                Toast.show({ content: "İşleminiz başarılı." });
+
+                //if (returnUrl && returnUrl.length > 0)
+                   // location.href = returnUrl;
+            }
+        });
+
+        return false;
+    });
+
     $(document).on("click", ".default-delete", function () {
         var $self = $(this);
         var url  = $self.attr("data-url");

@@ -8,28 +8,32 @@
 
 
 <style>
-    .row {
+    /*.row {
         overflow: hidden;
+        z-index: 9999999;
     }
 
     .cols {
         padding-bottom: 100%;
         margin-bottom: -100%;
         overflow: hidden;
+        z-index:9999999;
     }
 
     @@media(min-width: 992px) {
         .col-md-4:not(:first-child),
         .col-md-6:not(:first-child) {
             border-left: 1px solid #eeeeee;
+            z-index: 9999999;
         }
 
         .col-md-4:not(:last-child),
         .col-md-6:not(:last-child) {
             border-right: 1px solid #eeeeee;
             margin-right: -1px;
+            z-index: 9999999;
         }
-    }
+    }*/
 </style>
 <div class="container" style="height:initial">
     <br /> <br />
@@ -37,63 +41,89 @@
         Giriş Yap
     </h1>
     <hr>
-    <div class="row ">
-        <div class="col-md-6 cols">
-
+    <div class="row " style="border-left: 1px solid #eeeeee;border-right: 1px solid #eeeeee;">
+        <div class="col-md-6 cols" style=" border-right: 1px solid #eeeeee;">
+            <input type="hidden" id="returnUrl" value="@Url.Action("Signup", "User")" />
             <div class="contact-info">
-                <form class="" action="@Url.Action("Login", "User")" method="post">
+                <form id="login-form" action="@Url.Action("Signup", "User")" method="post">
                     <div class="contact-form row center-block">
                         <div class="col-sm-12   ">
-                            <div class="form-group">
+                            <div class="form-group pad">
                                 <i class="fa fa-user" aria-hidden="true"></i>
                                 <input type="text" name="AdSoyad" class="form-control" required placeholder="Adı Soyadı">
                             </div>
-                            <div class="form-group">
+                            <div class="form-group pad">
                                 <i class="fa fa-envelope" aria-hidden="true"></i>
                                 <input type="email" class="form-control" name="Eposta" required placeholder="E-Posta">
                             </div>
-                            <div class="form-group">
+                            <div class="form-group pad">
+                                <i class="fa fa-phone" aria-hidden="true"></i>
+                                <input type="tel" class="form-control" name="TelefonNo" required placeholder="Telefon Numarası">
+                            </div>
+                            <div class="form-group pad">
                                 <i class="fa fa-key" aria-hidden="true"></i>
-                                <input type="password" class="form-control" name="Parola" required placeholder="Parola">
+                                <input type="password" id="Parola" pattern=".{6,}" class="form-control" name="Parola" required placeholder="Parola Minumum:6 Karakter">
+                            </div>
+                            <div class="form-group pad">
+                                <i class="fa fa-key" aria-hidden="true"></i>
+                                <input type="password" id="ParolaTekrar" pattern=".{6,}" class="form-control" name="ParolaTekrar" required placeholder="Parola Tekrar">
                             </div>
                             <div class="form-group form-control">
 
-                                <input type="checkbox" class="custom-control-input" id="firmamVar">
+                                <input type="checkbox" name="FirmaVarmi" class="custom-control-input" id="firmamVar">
                                 <label class=" custom-control-label" for="firmamVar">Firmam Var</label>
 
                             </div>
+
+                            <div class="form-group firma">
+                                <label>Firma Adı(*)</label>
+                                <input type="text" class="form-control required" id="txtBaslik" placeholder="Firma Adını Giriniz">
+                            </div>
+                            <div class="form-group firma">
+                                <label>İl(*)</label>
+
+
+                                <select class="selectpicker required" name="FirmarefIl" id="inputIl" data-width="100%"></select>
+
+                            </div>
+                            <div class="form-group firma">
+                                <label>İlçe(*)</label>
+
+                                <select class="selectpicker required" name="FirmarefIlce" id="inputIlce" data-width="100%"></select>
+
+                            </div>
+                            <div class="form-group firma">
+                                <label>Vergi Dairesi(*)</label>
+
+                                <select class="selectpicker required" name="FirmarefIlce" id="inputVergiDairesi" data-width="100%"></select>
+
+                            </div>
+                            <div class="form-group firma">
+                                <label>Vergi Numarası(*)</label>
+                                <input type="text" class="form-control required" pattern=".{10,}" id="txtBaslik" data-mask="00-00-00-00-00" placeholder="Firma Vergi Numarasını Giriniz">
+                            </div>
+                            <div class="form-group firma">
+                                <label>Web Sitesi</label>
+                                <input type="text" class="form-control" id="txtBaslik" v placeholder="Varsa Web Sitenizi Yazınız">
+                            </div>
+                            <div class="form-group firma">
+                                <label>Adres(*)</label>
+                                <textarea id="txtAdres" name="FirmaAdres" class="form-control required" rows="2" placeholder="Firma Adresini Giriniz"></textarea>
+                            </div>
+
+
                         </div>
 
 
                     </div>
-                    <div id="firma-div" style="display:none" class="row center-block">
-                        <div class="col-sm-12   ">
-                            <div class="form-group">
-                                <label>Firma Adı(*)</label>
-                                <input type="text" class="form-control" required="required" id="txtBaslik" placeholder="Firma Adını Giriniz">
-                            </div>
-                            <div class="form-group">
-                                <label>İl(*)</label>
-                                <div class="form-group">
-
-                                    <select class="selectpicker" name="FirmarefIl" id="inputIl" data-width="100%"></select>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label>İlçe(*)</label>
-                                <div class="form-group">
-                                    <select class="selectpicker" name="FirmarefIlce" id="inputIlce" data-width="100%"></select>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label>Adres(*)</label>
-                                <textarea id="txtAdres" name="FirmaAdres" required="required" class="form-control" rows="2" placeholder="Firma Adresini Giriniz"></textarea>
-                            </div>
-                            
-                        </div>
+                    @*<div id="firma-div" style="display:none" class="row center-block">
+                <div class="col-sm-12   ">
 
 
-                        </div>
+                </div>
+
+
+                </div>*@
                     <div class="submit-button text-center">
                         <button type="submit" value="Login" class="btn btn-primary">Kayit Ol</button>
                     </div>
@@ -102,7 +132,7 @@
 
 
         </div>
-        <div class="col-md-6 cols text-center">
+        <div class="col-md-6 cols text-center" >
             <br />
             <h1>Üye Olduysanız </h1>
             <h2><a href="@Url.Action("Login", "User")"> Giriş Yapınız</a></h2>
@@ -113,19 +143,44 @@
 
     @section scripts {
         <script>
-            
+            $(document).ready(function () {
+                 
+                Genel.IlComboDoldur(); 
+                var password = document.getElementById("Parola")
+                    , confirm_password = document.getElementById("ParolaTekrar");
+
+                function validatePassword() {
+                    if (password.value != confirm_password.value) {
+                        confirm_password.setCustomValidity("Parola Uyuşmuyor Tekrar Deniyiniz");
+                    } else {
+                        confirm_password.setCustomValidity('');
+                    }
+                }
+
+                password.onchange = validatePassword;
+                confirm_password.onkeyup = validatePassword;
+            });
+            $(".firma").css("display", "none");
             $('[id="firmamVar"]').change(function () {
                 if ($(this).is(':checked')) {
-                    $("#firma-div").show(2000);
+                    $(".required").prop('required', true); 
+                    $(".firma").show(2000);
+
                 }
                 else {
-                    $("#firma-div").hide("fast", function () {
+                    $(".required").prop('required', false); 
+                    $(".firma").hide("fast", function () {
                         // Use arguments.callee so we don't need a named function
                        // $(this).prev().hide("slow");
                     });
                 }
             });
 
+            $(document).on("change", "#inputIl", function () {
+                var selectedIl = $('#inputIl').val();
+                Genel.IlceComboDoldur(selectedIl);
+                Genel.VergiDairesiComboDoldur(selectedIl);
+            });
         </script>
         }
     </div>

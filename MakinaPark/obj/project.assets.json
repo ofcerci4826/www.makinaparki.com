@@ -28,6 +28,15 @@
           "bootstrap": "3.3.0"
         }
       },
+      "Echovoice.JSON/2.0.15151.1": {
+        "type": "package",
+        "compile": {
+          "lib/Echovoice.JSON.dll": {}
+        },
+        "runtime": {
+          "lib/Echovoice.JSON.dll": {}
+        }
+      },
       "jQuery/1.9.1": {
         "type": "package"
       },
@@ -4790,6 +4799,20 @@
         "content/Scripts/bootstrap-datetimepicker.js",
         "content/Scripts/bootstrap-datetimepicker.min.js",
         "tools/install.ps1"
+      ]
+    },
+    "Echovoice.JSON/2.0.15151.1": {
+      "sha512": "F4RzFLK/cJGK9jYf40o/lvcHjGucgifH4VbirPBtJUA02t+2BNod5r/1rJb0L5vq8riYhWqlOv4m/Le/RA9qig==",
+      "type": "package",
+      "path": "echovoice.json/2.0.15151.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "echovoice.json.2.0.15151.1.nupkg.sha512",
+        "echovoice.json.nuspec",
+        "lib/Echovoice.JSON.dll",
+        "lib/Echovoice.JSON.pdb",
+        "lib/Echovoice.JSON.xml"
       ]
     },
     "jQuery/1.9.1": {
@@ -12466,6 +12489,7 @@
     ".NETCoreApp,Version=v2.1": [
       "Bootstrap.v3.Datetimepicker >= 4.17.45",
       "Bootstrap.v3.Datetimepicker.CSS >= 4.17.45",
+      "Echovoice.JSON >= 2.0.15151.1",
       "Microsoft.AspNetCore.App >= 2.1.1",
       "Microsoft.AspNetCore.Razor.Design >= 2.1.2",
       "Microsoft.NETCore.App >= 2.1.0",
@@ -12522,6 +12546,10 @@
             "target": "Package",
             "version": "[4.17.45, )"
           },
+          "Echovoice.JSON": {
+            "target": "Package",
+            "version": "[2.0.15151.1, )"
+          },
           "Microsoft.AspNetCore.App": {
             "suppressParent": "All",
             "target": "Package",
@@ -12562,6 +12590,16 @@
       "warningLevel": 1,
       "message": "Bootstrap.v3.Datetimepicker 4.17.45 depends on bootstrap.less (>= 3.3.0) but bootstrap.less 3.3.0 was not found. An approximate best match of bootstrap.less 3.3.5 was resolved.",
       "libraryId": "bootstrap.less",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.1"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Echovoice.JSON 2.0.15151.1' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.1'. This package may not be fully compatible with your project.",
+      "libraryId": "Echovoice.JSON",
       "targetGraphs": [
         ".NETCoreApp,Version=v2.1"
       ]

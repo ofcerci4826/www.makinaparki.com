@@ -12,14 +12,22 @@ namespace MakinaPark.Models
     public class Kullanici
     {
         public long Id { get; set; }
-        public long refId { get; set; }
+        public long refFirma { get; set; }
         public long refKullaniciGrup { get; set; }
         public string KullaniciGrupAd { get; set; }
         public string Token { get; set; }
         public string AdSoyad { get; set; }
         public string Eposta { get; set; }
-        public string TelefonNo { get; set; }
+        public string TelefonNo { get; set; } 
         public string Parola { get; set; }
+        public bool FirmaVarmi { get; set; }
+        public string FirmaAdi { get; set; }
+        public int refVergiDairesi { get; set; }
+        public string VergiNo { get; set; }
+        public int refIl { get; set; }
+        public int refIlce { get; set; }
+        public string Adres { get; set; }
+        public string WebSitesi { get; set; }
         public bool Aktif { get; set; }
         public string RecordTime { get; set; }
         public List<Yetki> Yetkiler { get; set; }
@@ -29,17 +37,43 @@ namespace MakinaPark.Models
             return new Kullanici
             {
                 Id = row.GetLong("Id"),
-                refId = row.GetLong("refId"),
+                refFirma = row.GetLong("refFirma"),
+                refKullaniciGrup = row.GetLong("refKullaniciGrup"),
+                KullaniciGrupAd = row.GetString("KullaniciGrupAd"),
+                Token = row.GetString("Token"),
                 AdSoyad = row.GetString("AdSoyad"),
                 Eposta = row.GetString("Eposta"),
                 TelefonNo = row.GetString("TelefonNo"),
-                Token = row.GetString("Token"),
+                Parola = row.GetString("TelefonNo"),  
+                FirmaVarmi = row.GetBool("TelefonNo"),
+                FirmaAdi = row.GetString("TelefonNo"),
+                refVergiDairesi = row.GetInteger("TelefonNo"),
+                VergiNo = row.GetString("TelefonNo"),
+                refIl = row.GetInteger("TelefonNo"),
+                refIlce = row.GetInteger("TelefonNo"),
+                Adres = row.GetString("TelefonNo"),
+                WebSitesi = row.GetString("TelefonNo"), 
                 Aktif = row.GetBool("Aktif"),
                 RecordTime = row.GetString("RecordTime"),
-                refKullaniciGrup = row.GetLong("refKullaniciGrup"),
-                KullaniciGrupAd = row.GetString("KullaniciGrupAd"),
+              
+                
                 Yetkiler = new List<Yetki>()
             };
+        }
+
+        public bool IsValid(bool isUpdate = false)
+        {
+            if (isUpdate && Id <= 0)
+                return false;
+
+            if (string.IsNullOrEmpty(AdSoyad)
+                || string.IsNullOrEmpty(Eposta)
+                || string.IsNullOrEmpty(TelefonNo)
+                || string.IsNullOrEmpty(Parola)
+                )
+                return false;
+
+            return true;
         }
 
         public static Kullanici Oturum(long? id = null)
@@ -146,16 +180,25 @@ namespace MakinaPark.Models
         public static string Olustur(Kullanici param)
         {
             return Sql.GetInstance().Get("sp_kullanici_olustur", new List<object> {
-                Oturum().Id,
-                param.refId,
+                null,
+                null,
                 param.AdSoyad,
+                param.TelefonNo,
                 param.Eposta,
                 param.Parola,
-                param.Aktif,
-                param.refKullaniciGrup
+                1,
+                2,
+                param.FirmaVarmi,
+                param.FirmaAdi,
+                param.refVergiDairesi,
+                param.VergiNo,
+                param.refIl,
+                param.refIlce,
+                param.Adres,
+                param.WebSitesi
             }, (row) =>
             {
-                return row.GetString("Result");
+                return row.GetString("Result")+"|"+ row.GetString("eposta") + "|" + row.GetString("parola");
             });
         }
 
@@ -164,7 +207,6 @@ namespace MakinaPark.Models
             return Sql.GetInstance().Get("sp_kullanici_guncelle", new List<object>
             {
                 Oturum().Id,
-                param.refId,
                 param.Id,
                 param.AdSoyad,
                 param.Aktif,

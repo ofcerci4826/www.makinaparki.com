@@ -2490,21 +2490,21 @@ a:after, a:before, .btn.btn-primary i,
 	box-shadow: none;
 }
 
-.contact-form input,
-.contact-form textarea {
+.contact-form .pad input,
+.contact-form .pad textarea {
 	padding:0 50px;
 }
 
-.contact-form textarea {
-	min-height: 238px;
-	padding-top: 15px;
-	resize:none;
+.contact-form .pad textarea {
+    min-height: 238px;
+    padding-top: 15px;
+    resize: none;
 }
 
-.contact-form input[type="text"],
-.contact-form input[type="email"] {
-	background-repeat: no-repeat;
-	background-position: left 20px center;	
+.contact-form .pad input[type="text"],
+.contact-form .pad input[type="email"] {
+    background-repeat: no-repeat;
+    background-position: left 20px center;
 }
 
 .form-group {

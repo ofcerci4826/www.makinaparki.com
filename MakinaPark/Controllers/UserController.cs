@@ -1,10 +1,9 @@
 ﻿using MakinaPark.Models;
 using MakinaPark.Models.Utils;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.IO;
+using System.Runtime.Serialization.Json;
+using System.Text;
 using Vegatro.NetCore;
 using Vegatro.NetCore.Filters;
 
@@ -50,6 +49,29 @@ namespace MakinaPark.Controllers
             return View();
         }
 
+        [HttpPost]
+        public IActionResult Signup(Kullanici param)
+        {
+            if (!param.IsValid())
+                return Content(AppResponse.Return(400));
+            var app = AppResponse.Return(Kullanici.Olustur(param));
+            string[] dizi = app.Split();
+            //return RedirectToAction("Login", "User",new {eposta="sdf",parola= });
+            string jsonString = app;
+            Result obj = JsonDeserialize<Result>(jsonString);
+
+            return RedirectToAction("Login", "User", new { eposta = obj.Eposta, parola = obj.Parola});
+            //return Content(app);
+            
+        }
+        private static T JsonDeserialize<T>(string jsonString)
+        {
+            MemoryStream stream1 = new MemoryStream(Encoding.UTF8.GetBytes(jsonString));
+            DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(T));
+            T obj = (T)ser.ReadObject(stream1);
+            return obj;
+
+        }
         [AuthControl]
         [HttpGet]
         public IActionResult Account()
