@@ -81,13 +81,18 @@ a:hover {
     color: #fff;
     font-weight: bold;
 }
-
-.content-body {
-    float: right;
-    width: calc(100% - 250px);
-    padding: 30px;
+@media(max-width: 760px) {
+    .content-body {
+    }
 }
 
+@media(min-width: 760px) {
+  .content-body {
+        float: right;
+        width: calc(100% - 250px);
+        padding: 30px;
+    }
+}
 a, a:hover, a:active,
 a:focus, button:focus, .btn:focus,
 .form-control:focus {
