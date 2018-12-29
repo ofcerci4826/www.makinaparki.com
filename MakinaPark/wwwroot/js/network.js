@@ -14,8 +14,8 @@ var Network = (function(){
             if(!Network.isOnline)
             {
                 hideLoadingAnimation();
-                Toast.show({ content: 'Veriler alınamadı, lütfen internet bağlantınızı kontrol edin.' });
-
+                //Toast.show({ content: 'Veriler alınamadı, lütfen internet bağlantınızı kontrol edin.' });
+                alert('Veriler alınamadı, lütfen internet bağlantınızı kontrol edin.');
                 return;
             }
                 
@@ -30,7 +30,8 @@ var Network = (function(){
                     if(error == 'abort')
                         return;
                     
-                    Toast.show({ content: 'Veriler alınırken bir hata oluştu. Lütfen tekrar deneyin.' });
+                    //Toast.show({ content: 'Veriler alınırken bir hata oluştu. Lütfen tekrar deneyin.' });
+                    alert('Veriler alınırken bir hata oluştu. Lütfen tekrar deneyin.');
                     GlobalLoading.hide();
                 },
                 beforeSend      : function(jqXHR){

@@ -58,7 +58,9 @@ namespace MakinaPark.Models
             };
         }
 
-        public static string Olustur(Makina param)
+        //public static string Olustur(int refKategori, int refKategoriAlt, int refKategoriMarka, int refKategoriMarkaModel, int refMakinaDurum, int ModelYil, int CalismaSaati, int Plaka, int SeriNo, string Aciklama)
+
+              public static string Olustur(Makina param)
         {
             return Sql.GetInstance().Get("sp_kullanici_makina_olustur", new List<object> {
                Kullanici.Oturum().Id,

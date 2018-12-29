@@ -20,6 +20,7 @@
     <!-- CSS -->
     <link href="~/client/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="~/client/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/client/css/jquery.toast.css">
     <link rel="stylesheet" href="~/client/css/animate.css">
     <link rel="stylesheet" href="~/client/css/magnific-popup.css">
     <link rel="stylesheet" href="~/client/css/cubeportfolio.min.css">
@@ -31,8 +32,9 @@
     @*<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/css/bootstrap-select.min.css">*@
     <link href="~/client/Bootstrap-Select/css/bootstrap-select.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/client/bootstrap.v3.datetimepicker/4.17.45/content/Content/bootstrap-datetimepicker.css">
+    @*<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css">*@
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
 
-   
 
 
     <!-- icons -->
@@ -142,7 +144,7 @@
                                 {
                                     <li>Firma Bilgilerim</li>
                                 }
-                                </ul>
+                            </ul>
                             @*<li data-toggle="collapse" data-target="#reklamVeren" class="collapsed">
                                     <a href="#"><i class="fa fa-car fa-lg"></i> Reklam Veren <span class="arrow"></span></a>
                                 </li>
@@ -174,8 +176,10 @@
     </div>
     @Html.Partial("_Footer")
     <!-- script -->
+    @*<script src="~/client/js/jquery.min.js"></script>*@
+    <script src="~/js/jquery-3.3.1.min.js"></script>
+    <script src="~/js/globalloading.js"></script>
 
-    <script src="~/client/js/jquery.min.js"></script>
     <script src="~/client/js/modernizr.min.js"></script>
     <script src="~/client/js/bootstrap.min.js"></script>
     <script src="~/client/js/owl.carousel.min.js"></script>
@@ -184,13 +188,22 @@
     <script src="~/client/js/jquery.backstretch.min.js"></script>
     <script src="~/client/js/custom.js"></script>
 
+
     <!-- Latest compiled and minified JavaScript -->
     @*<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/js/bootstrap-select.min.js"></script>*@
     <script type="text/javascript" src="~/client/Bootstrap-Select/js/bootstrap-select.js"></script>
     <script type="text/javascript" src="~/client/moment.js/2.23.0/Content/Scripts/moment.min.js"></script>
     <script type="text/javascript" src="~/client/bootstrap.v3.datetimepicker/4.17.45/content/Scripts/bootstrap-datetimepicker.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/locale/tr.js"></script>
 
+    <script src="~/js/jquery.toast.min.js"></script>
+    <script src="~/js/toast.js"></script>
 
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+   
+
+    @RenderSection("Scripts", required: false)
 
 </body>
 

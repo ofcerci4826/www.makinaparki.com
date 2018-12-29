@@ -1238,7 +1238,8 @@ a:after, a:before, .btn.btn-primary i,
 }
 
 .pagination>li>a, .pagination>li>span {
-    padding: 12px 28px;
+    /*padding: 12px 28px;*/
+    padding:6px 12px;
     color: #999;
     border: 1px solid #e5e5e5;
     font-size: 16px;
@@ -2569,7 +2570,128 @@ img.mfp-img {
     margin-right: -20px;
 }
 
+.og-loading-overlay {
+    background: #000;
+    opacity: 0.7;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 30000;
+}
 
+#og-loading {
+    height: 100px;
+    width: 100px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+    z-index: 30001;
+}
+
+#og-loading-c {
+    height: 100px;
+    width: 100px;
+    position: relative;
+}
+
+#og-loading-logo {
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    background: url(../../images/og_loading_logo.png);
+    background-size: 64px;
+    background-repeat: no-repeat;
+    background-position: 18px 22px;
+    top: 0px;
+    left: 0px;
+    z-index: 20001;
+    animation: loadingCircleAnimS2 2s;
+    animation-iteration-count: infinite;
+}
+
+.og-loading-circle {
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    background: url(../../images/og_loading_circle.png);
+    top: 0px;
+    left: 0px;
+    z-index: 20001;
+    animation: loadingCircleAnimS1 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.og-loading-circle-2 {
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    background: url(../../images/og_loading_circle.png);
+    top: 0px;
+    left: 0px;
+    z-index: 20001;
+    animation: loadingCircleAnimS3 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes loadingCircleAnimS1 {
+    0% {
+        transform: rotate(360deg) scale(1.1, 1.1);
+        opacity: 0.2; /*filter:blur(5px);*/
+    }
+
+    50% {
+        transform: rotate(180deg) scale(1.1, 1.1);
+        opacity: 0.2; /*filter:blur(5px);*/
+    }
+
+    100% {
+        transform: rotate(0deg) scale(1.1, 1.1);
+        opacity: 0.2; /*filter:blur(5px);*/
+    }
+}
+
+@keyframes loadingCircleAnimS3 {
+    0% {
+        transform: rotate(0deg) scale(0.8, 0.8);
+        opacity: 0.2; /*filter:blur(5px);*/
+    }
+
+    50% {
+        transform: rotate(180deg) scale(0.8, 0.8);
+        opacity: 0.2; /*filter:blur(5px);*/
+    }
+
+    100% {
+        transform: rotate(360deg) scale(0.8, 0.8);
+        opacity: 0.2; /*filter:blur(5px);*/
+    }
+}
+
+@keyframes loadingCircleAnimS2 {
+    0% {
+        transform: scale(0.7, 0.7);
+        transform-origin: center;
+        opacity: 1; /*filter:blur(5px);*/
+    }
+
+    50% {
+        transform: scale(0.7, 0.7);
+        transform-origin: center;
+        opacity: 1; /*filter:blur(5px);*/
+    }
+
+    100% {
+        transform: scale(0.7, 0.7);
+        transform-origin: center;
+        opacity: 1; /*filter:blur(5px);*/
+    }
+}
 
 /* ==========================================================================
 								THE END OF CSS

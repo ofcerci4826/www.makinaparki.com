@@ -140,17 +140,17 @@
     </div>
 </div>
 
-<div class="row">
-    <div class="col-sm-4">
-        <div class="form-group">
-            <label>Aktif mi?</label>
-            <label class="custom-control custom-checkbox">
-                <input type="checkbox" checked hidden class="custom-control-input">
-                <span class="custom-control-indicator"></span>
-            </label>
+@*<div class="row">
+        <div class="col-sm-4">
+            <div class="form-group">
+                <label>Aktif mi?</label>
+                <label class="custom-control custom-checkbox">
+                    <input type="checkbox" checked hidden class="custom-control-input">
+                    <span class="custom-control-indicator"></span>
+                </label>
+            </div>
         </div>
-    </div>
-</div>
+    </div>*@
 
 <div class="form-group">
     <label>Ek Bilgiler(İsteğe Bağlı)</label>
@@ -159,53 +159,52 @@
 
 <a href="#" class="btn btn-primary" onclick="Makina.MakinaOlustur();">KAYDET</a>
 
-<script src="~/client/js/jquery.min.js"></script>
-<script type="text/javascript" src="~/client/moment.js/2.23.0/Content/Scripts/moment.min.js"></script>
-<script type="text/javascript" src="~/client/bootstrap.v3.datetimepicker/4.17.45/content/Scripts/bootstrap-datetimepicker.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/locale/tr.js"></script>
-<script src="~/js/globalloading.js"></script>
-<script src="~/js/network.js"></script>
-<script src="~/js/Controller/Genel.js"></script>
-<script src="~/js/Controller/Kategori.js"></script>
-<script src="~/js/Controller/Makina.js"></script>
+@section Scripts {
+   
+    <script src="~/js/network.js"></script>
+    <script src="~/js/Controller/Genel.js"></script>
+    <script src="~/js/Controller/Kategori.js"></script>
+    <script src="~/js/Controller/Makina.js"></script>
 
 
+    <script type="text/javascript">
 
-<script type="text/javascript">
+        $(document).ready(function () {
 
-    $(document).ready(function () {
+            Kategori.KategoriComboDoldur();
+            Genel.MakinaDurumuComboDoldur();
 
-        Kategori.KategoriComboDoldur();
-        Genel.MakinaDurumuComboDoldur();
+        });
 
-    });
+        $(document).on("change", "#inputIl", function () {
+            var selectedIl = $('#inputIl').val();
+            Genel.IlceComboDoldur(selectedIl);
+        });
 
-    $(document).on("change", "#inputIl", function () {
-        var selectedIl = $('#inputIl').val();
-        Genel.IlceComboDoldur(selectedIl);
-    });
+        $(document).on("change", "#inputKategori", function () {
+            var selectedKategori = $('#inputKategori').val();
+            Kategori.AltKategoriComboDoldur(selectedKategori)
+        });
 
-    $(document).on("change", "#inputKategori", function () {
-        var selectedKategori = $('#inputKategori').val();
-        Kategori.AltKategoriComboDoldur(selectedKategori)
-    });
+        $(document).on("change", "#inputAltKategori", function () {
+            var selectedAltKategori = $('#inputAltKategori').val();
+            Kategori.KategoriMarkaComboDoldur(selectedAltKategori)
+        });
 
-    $(document).on("change", "#inputAltKategori", function () {
-        var selectedAltKategori = $('#inputAltKategori').val();
-        Kategori.KategoriMarkaComboDoldur(selectedAltKategori)
-    });
+        $(document).on("change", "#inputMarka", function () {
+            var selectedKategoriMarka = $('#inputMarka').val();
+            Kategori.KategoriModelComboDoldur(selectedKategoriMarka)
+        });
 
-    $(document).on("change", "#inputMarka", function () {
-        var selectedKategoriMarka = $('#inputMarka').val();
-        Kategori.KategoriModelComboDoldur(selectedKategoriMarka)
-    });
-
-    $(document).on("change", "#inputMarka", function () {
-        var selectedKategoriMarka = $('#inputMarka').val();
-        Kategori.KategoriModelComboDoldur(selectedKategoriMarka)
-    });
+        $(document).on("change", "#inputMarka", function () {
+            var selectedKategoriMarka = $('#inputMarka').val();
+            Kategori.KategoriModelComboDoldur(selectedKategoriMarka)
+        });
 
 
-</script>
+    </script>
+}
+
+
 
 

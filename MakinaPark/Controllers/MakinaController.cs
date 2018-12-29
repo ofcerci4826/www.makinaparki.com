@@ -42,13 +42,12 @@ namespace MakinaPark.Controllers
         }
 
 
-        [AuthControl]
+        //[AuthControl]
         [HttpPost]
+        //public IActionResult MakinaOlustur(int refKategori, int refKategoriAlt, int refKategoriMarka, int refKategoriMarkaModel, int refMakinaDurum, int ModelYil, int CalismaSaati, int Plaka, int SeriNo, string Aciklama)
         public IActionResult MakinaOlustur(Makina param)
         {
             return Content(AppResponse.Return(Makina.Olustur(param)));
-
-
         }
     }
 }

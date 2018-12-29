@@ -15,9 +15,9 @@ var TOAST_TYPE = {
     INFO: 'info'
 };
 
-var Toast = (function(){
-    return{
-        show: function(params){
+var Toast = (function () {
+    return {
+        show: function (params) {
             var options = {
                 content: '',
                 timeout: 4000,
@@ -29,8 +29,8 @@ var Toast = (function(){
                 animation: 'slide',
                 fontSize: '16px'
             };
-            
-            if(params)
+
+            if (params)
                 $.extend(options, params);
 
             if (options.type == TOAST_TYPE.SUCCESS) {
