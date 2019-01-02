@@ -1,18 +1,6 @@
 /.vs/
+
 /MakinaPark/obj/
+
 /MakinaPark/bin/
-/MakinaPark/bin/Debug/*
-/MakinaPark/obj/Debug/*
-\MakinaPark\obj\Debug\*
-\MakinaPark\.vs\MySolution\v14\.suo
-# Build results
-[Dd]ebug/
-[Dd]ebugPublic/
-[Rr]elease/
-[Rr]eleases/
-x64/
-x86/
-build/
-bld/
-[Bb]in/
-[Oo]bj/
+
