@@ -9,6 +9,7 @@
                                                     <div class="og-loading-circle-2"></div>\
                                                 </div>\
                                             </div>');
+            //$('body').css('filter', 'blur(5px)');
 
             //$('#loadingBox:last-child').css('left', ($(window).width() - $('#loadingBox').width()) / 2);
             //$('#loadingBox:last-child').css('top', ($(window).height() - $('#loadingBox').height()) / 2);
@@ -20,7 +21,8 @@
                 $('.og-loading-overlay').fadeOut(200);
                 $('#og-loading').fadeOut(200);
 
-                setTimeout(function() {
+                setTimeout(function () {
+                    //$('body').css('filter', 'blur(0px)');
                     $('.defaultOverlay').remove();
                     $('#og-loading').remove();
                 }, 0);

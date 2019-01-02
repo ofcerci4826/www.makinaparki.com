@@ -1,4 +1,5 @@
-﻿var Makina = {
+﻿
+var Makina = {
 
     MakinaOlustur: function () {
 
@@ -62,16 +63,16 @@
             refKategoriMarka: $('#inputMarka').val(),
             refKategoriMarkaModel: $('#inputModel').val(),
             refMakinaDurum: $('#inputMakinaDurum').val(),
-            ModelYili: $('#txtModelYili').val(),
+            ModelYil: $('#txtModelYili').val(),
             CalismaSaati: $('#txtCalismaSaati').val(),
             Plaka: $('#txtPlaka').val(),
-            txtSeriNo: $('#txtSeriNo').val(),
-          
+            SeriNo: $('#txtSeriNo').val(),
+            Aciklama: $('#txtAciklama').val(),
         };
         GlobalLoading.show();
         Network.ajaxRequest({
             method: "post",
-            url: '/Makina/Olustur',
+            url: '/Makina/MakinaOlustur',
             data: params,
             success: function (data) {
                 console.log(data);
@@ -107,7 +108,7 @@
             }
 
         });
-        GlobalLoading.hide();
+        
     },
    
 }
