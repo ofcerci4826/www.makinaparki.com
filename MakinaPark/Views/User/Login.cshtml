@@ -1,0 +1,78 @@
+﻿@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
+@{
+    ViewData["Title"] = "Ana Sayfa";
+    Layout = "~/Views/Shared/_Main.cshtml";
+}
+
+<style>
+
+    .row {
+        overflow: hidden;
+    }
+
+    .cols {
+        padding-bottom: 100%;
+        margin-bottom: -100%;
+        overflow: hidden;
+    }
+
+    @@media(min-width: 992px) {
+        .col-md-4:not(:first-child),
+        .col-md-6:not(:first-child) {
+            border-left: 1px solid #eeeeee;
+        }
+
+        .col-md-4:not(:last-child),
+        .col-md-6:not(:last-child) {
+            border-right: 1px solid #eeeeee;
+            margin-right: -1px;
+        }
+    }
+</style>
+<div class="container" style="height:initial">
+    <br /> <br />
+    <h1>
+        Giriş Yap
+    </h1>
+    <hr>
+    <div class="row ">
+        <div class="col-md-6 cols">
+
+            <div class="contact-info">
+                <form class="" action="@Url.Action("Login", "User")" method="post">
+                    <div class="contact-form row center-block">
+                        <div class="col-sm-12   ">
+                            <div class="form-group pad">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                                <input type="email" class="form-control" name="Eposta" required placeholder="E-Posta">
+                            </div>
+                            <div class="form-group pad">
+                                <i class="fa fa-key" aria-hidden="true"></i>
+                                <input type="password" class="form-control" name="Parola" required placeholder="Parola">
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                    <div class="submit-button text-center">
+                        <button type="submit" value="Login" class="btn btn-primary">Kayit Ol</button>
+                    </div>
+                </form><!-- contact form -->
+            </div>
+
+
+        </div>
+        <div class="col-md-6 cols text-center">
+            <br />
+            <h1>Üye Değilseniz </h1>
+            <h2><a href="@Url.Action("Signup", "User")"> Hemen Üye Olun</a></h2>
+
+        </div>
+    </div>
+    <hr>
+    </div>
+
+
+

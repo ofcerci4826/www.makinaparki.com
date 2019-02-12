@@ -1,0 +1,211 @@
+﻿@using MakinaPark.Models;
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from html.gridbootstrap.com/diagram/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 09 Dec 2018 12:49:14 GMT -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Grid Bootstrap">
+    <meta name="description" content="">
+
+    <title>Makina Parkı | Kiralık-Satılık-Yetkili Servisler-Yedek Parça-Operatörler-Lojistik</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,900" rel="stylesheet">
+
+    <!-- CSS -->
+    <link href="~/client/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/client/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/client/css/jquery.toast.css">
+    <link rel="stylesheet" href="~/client/css/animate.css">
+    <link rel="stylesheet" href="~/client/css/magnific-popup.css">
+    <link rel="stylesheet" href="~/client/css/cubeportfolio.min.css">
+    <link rel="stylesheet" href="~/client/css/owl.carousel.css">
+    <link rel="stylesheet" href="~/client/css/main.css">
+    <link rel="stylesheet" href="~/client/css/responsive.css">
+    <link rel="stylesheet" href="~/css/side-bar-menu.css" />
+    <!-- Latest compiled and minified CSS -->
+    @*<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/css/bootstrap-select.min.css">*@
+    <link href="~/client/Bootstrap-Select/css/bootstrap-select.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/client/bootstrap.v3.datetimepicker/4.17.45/content/Content/bootstrap-datetimepicker.css">
+    @*<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css">*@
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+
+
+
+    <!-- icons -->
+    <link rel="icon" href="images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="~/client/images/ico/apple-touch-icon-144-precomposed.html">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="~/client/images/ico/apple-touch-icon-114-precomposed.html">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="~/client/images/ico/apple-touch-icon-72-precomposed.html">
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="~/client/images/ico/apple-touch-icon-57-precomposed.html">
+    <!-- icons -->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Developed By Grid Bootstrap -->
+
+</head>
+<body>
+
+    @Html.Partial("_HeaderAccount")
+
+    <div class="service-section">
+
+        <div class="container">
+            @*@Html.Partial("_AccountSideBar")*@
+
+            <div class="col-lg-12" style="padding:0px;">
+                <div class="nav-side-menu">
+                    <div class="brand">İşlemlerim</div>
+                    <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+
+                    <div class="menu-list">
+
+                        <ul id="menu-content" class="menu-content collapse out">
+                            <li>
+                                <a href="@Url.Action("Ozet",  "User")">
+                                    <i class="fa fa-dashboard fa-lg"></i> Özet
+                                </a>
+                            </li>
+                            <li data-toggle="collapse" data-target="#products" aria-expanded="true" class="active">
+                                <a href="#"><i class="fa fa-handshake-o fa-lg"></i> Kiralık <span class="arrow"></span></a>
+                            </li>
+                            <ul class="sub-menu collapse in" id="products">
+                                <li><a href="@Url.Action("KiralikMakinaTalepOlustur",  "Kiralik")">Kiralık Makina Arıyorum</a></li> @*class="active"*@
+                                <li><a href="@Url.Action("KiralikMakinaTalepOlustur",  "Kiralik")">Teklif Ver</a></li>
+
+                            </ul>
+
+                            <li data-toggle="collapse" data-target="#products" aria-expanded="true" class="active">
+                                <a href="#"><i class="fa fa-map-signs fa-lg"></i> Makina Parkım <span class="arrow"></span></a>
+                            </li>
+                            <ul class="sub-menu collapse in" id="products">
+                                <li><a href="@Url.Action("Ekle",  "Makina")">Makina Ekle</a></li>
+                                <li><a href="@Url.Action("Parkim",  "Makina")">Makina Listem</a></li>
+                            </ul>
+
+                            @*<li data-toggle="collapse" data-target="#service" class="collapsed">
+                                    <a href="#"><i class="fa fa-globe fa-lg"></i> Satılık <span class="arrow"></span></a>
+                                </li>
+                                <ul class="sub-menu collapse" id="service">
+                                    <li>Ücretsiz İlan Ver</li>
+                                    <li>İlanlarım</li>
+                                    <li>Süresi Dolanlar</li>
+                                    <li>  <a href="@Url.Action("Favorilerim",  "User")">Favoriler</a></li>
+                                    <li>Doping</li>
+                                </ul>*@
+
+                            <li data-toggle="collapse" data-target="#new" aria-expanded="true" class="active">
+                                <a href="#"><i class="fa fa-gear fa-lg"></i> Servisler <span class="arrow"></span></a>
+                            </li>
+                            <ul class="sub-menu collapse in" id="new">
+                                @*<li>İş Ortağı Olmak İstiyorum</li>*@
+                                <li>Servis Çağır</li>
+                            </ul>
+
+                            @*<li data-toggle="collapse" data-target="#yedekParca" class="collapsed">
+                                    <a href="#"><i class="fa fa-car fa-lg"></i> Yedek Parça <span class="arrow"></span></a>
+                                </li>*@
+                            @*<ul class="sub-menu collapse" id="yedekParca">
+                                    <li>İş Ortağı Olmak İstiyorum</li>
+                                    <li>Yedek Parça Teklifi Al</li>
+                                </ul>*@
+
+                            @*<li data-toggle="collapse" data-target="#operator" class="collapsed">
+                                    <a href="#"><i class="fa fa-car fa-lg"></i> Operatör <span class="arrow"></span></a>
+                                </li>*@
+                            @*<ul class="sub-menu collapse" id="operator">
+                                    <li>CV'im</li>
+                                    <li>Operatörler</li>
+                                </ul>*@
+                            <li data-toggle="collapse" data-target="#lojistik" aria-expanded="true" class="active">
+                                <a href="#"><i class="fa fa-truck fa-lg"></i> Lojistik <span class="arrow"></span></a>
+                            </li>
+                            <ul class="sub-menu collapse in" id="lojistik">
+                                <li>İş Ortağı Olmak İstiyorum</li>
+                                <li>Lojistik Teklifi Al</li>
+                            </ul>
+                            <li data-toggle="collapse" data-target="#hesabim" aria-expanded="true" class="active">
+                                <a href="#">
+                                    <i class="fa fa-user fa-lg"></i> Hesabım
+                                </a>
+                            </li>
+                            <ul class="sub-menu collapse in" id="hesabim">
+                                <li><a href="@Url.Action("Account",  "User")">Kişisel Bilgilerim</a></li>
+                                @if (@Kullanici.Oturum().FirmaVarmi == true)
+                                {
+                                    <li>Firma Bilgilerim</li>
+                                }
+                            </ul>
+                            @*<li data-toggle="collapse" data-target="#reklamVeren" class="collapsed">
+                                    <a href="#"><i class="fa fa-car fa-lg"></i> Reklam Veren <span class="arrow"></span></a>
+                                </li>
+                                <ul class="sub-menu collapse" id="reklamVeren">
+                                    <li>Reklam Vermek İstiyorum</li>
+                                    <li>Kampanya Oluştur</li>
+                                </ul>*@
+                            @*<li data-toggle="collapse" data-target="#yonetim" class="collapsed">
+                                    <a href="#"><i class="fa fa-car fa-lg"></i> Makina Parkı Yönetim <span class="arrow"></span></a>
+                                </li>
+                                <ul class="sub-menu collapse" id="yonetim">
+                                    <li>Kullanıcılar</li>
+                                    <li>Kiralık Mak. Talep. Yönet</li>
+                                    <li>Satılık Mak. Talep. Yönet</li>
+                                    <li>Servis Talep. Yönet</li>
+                                    <li>Yedek Parça Talep. Yönet</li>
+                                </ul>*@
+                        </ul>
+                    </div>
+                </div>
+                <div class="content-body">
+                    @RenderBody()
+                </div>
+            </div>
+
+
+
+        </div><!-- container -->
+    </div>
+    @Html.Partial("_Footer")
+    <!-- script -->
+    @*<script src="~/client/js/jquery.min.js"></script>*@
+    <script src="~/js/jquery-3.3.1.min.js"></script>
+    <script src="~/js/globalloading.js"></script>
+
+    <script src="~/client/js/modernizr.min.js"></script>
+    <script src="~/client/js/bootstrap.min.js"></script>
+    <script src="~/client/js/owl.carousel.min.js"></script>
+    <script src="~/client/js/cubeportfolio.min.js"></script>
+    <script src="~/client/js/magnific-popup.min.js"></script>
+    <script src="~/client/js/jquery.backstretch.min.js"></script>
+    <script src="~/client/js/custom.js"></script>
+
+
+    <!-- Latest compiled and minified JavaScript -->
+    @*<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/js/bootstrap-select.min.js"></script>*@
+    <script type="text/javascript" src="~/client/Bootstrap-Select/js/bootstrap-select.js"></script>
+    <script type="text/javascript" src="~/client/moment.js/2.23.0/Content/Scripts/moment.min.js"></script>
+    <script type="text/javascript" src="~/client/bootstrap.v3.datetimepicker/4.17.45/content/Scripts/bootstrap-datetimepicker.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/locale/tr.js"></script>
+
+    <script src="~/js/jquery.toast.min.js"></script>
+    <script src="~/js/toast.js"></script>
+
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+   
+
+    @RenderSection("Scripts", required: false)
+
+</body>
+
+<!-- Mirrored from html.gridbootstrap.com/diagram/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 09 Dec 2018 12:49:30 GMT -->
+</html>    
